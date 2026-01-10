@@ -203,6 +203,27 @@ public class Fruit : MonoBehaviour
         // Проверяем, идеален ли фрукт
         isPerfect = (correctCount == REQUIRED_ACTIONS_COUNT);
 
+        // Отрисовываем финальный спрайт
+        if (spriteRenderer != null)
+        {
+            if (isPerfect && perfectFruitSprite != null)
+            {
+                // Все 4 действия правильные - показываем идеальный фрукт
+                spriteRenderer.sprite = perfectFruitSprite;
+                Debug.Log($"[FRUIT] Отрисован идеальный фрукт!");
+            }
+            else if (mutationCount > 0 && mutationCount <= mutationSprites.Length)
+            {
+                // Есть мутации - показываем соответствующий спрайт
+                int mutationIndex = mutationCount - 1;
+                if (mutationSprites[mutationIndex] != null)
+                {
+                    spriteRenderer.sprite = mutationSprites[mutationIndex];
+                    Debug.Log($"[FRUIT] Отрисован фрукт с мутацией: mutationSprites[{mutationIndex}] (Correct действий: {correctCount})");
+                }
+            }
+        }
+
         Debug.Log($"[FRUIT] РЕЗУЛЬТАТ ДЛЯ ФРУКТА '{fruitName}':");
         Debug.Log($"[FRUIT] Качество: {quality}%");
         Debug.Log($"[FRUIT] Мутации: {mutationCount}");
