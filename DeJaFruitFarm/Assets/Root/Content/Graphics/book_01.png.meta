@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 54894fa98905bc2449138f2c675cd626
+guid: 88f8f798a9fb84093a6f5ef9394ce408
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6559047180953006338
-    second: fruit_12_0
+      213: 4918756385348764137
+    second: book_01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,53 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fruit_12_0
+      name: book_01_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 10
-        width: 254
-        height: 233
-      alignment: 9
-      pivot: {x: 0.50487304, y: 0.025881788}
+        x: 51
+        y: 46
+        width: 1305
+        height: 676
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2013bb5e8aa660b50800000000000000
-      internalID: 6559047180953006338
+      spriteID: 9e1c56d2fdee24440800000000000000
+      internalID: 4918756385348764137
       vertices: []
       indices: 
       edges: []
@@ -151,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 96a9ae4f4b535fc47b375203d94d16c3
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fruit_12_0: 6559047180953006338
+      book_01_0: 4918756385348764137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
