@@ -214,7 +214,7 @@ public class Fruit : MonoBehaviour
         Debug.Log($"[FRUIT] Не в комбинации: {notInComboCount}");
 
         // Определяем качество (0-100)
-        quality = correctCount * 25 + wrongOrderCount * 10;
+        quality = correctCount * 25;
         quality = Mathf.Clamp(quality, 0, 100);
 
         // Определяем количество мутаций (0-4)
@@ -248,6 +248,8 @@ public class Fruit : MonoBehaviour
         Debug.Log($"[FRUIT] Качество: {quality}%");
         Debug.Log($"[FRUIT] Мутации: {mutationCount}");
         Debug.Log($"[FRUIT] Идеальный: {isPerfect}");
+
+        SaveManager.SaveFruitResult(fruitName, quality, isPerfect);
     }
 
     // Публичный метод для сброса фрукта
