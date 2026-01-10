@@ -35,6 +35,9 @@ public class Fruit : MonoBehaviour
     [Header("Визуал")]
     public SpriteRenderer spriteRenderer;
 
+    [Header("Менеджер")]
+    public GameManager gameManager;
+
     [Header("Состояние")]
     public List<ActionType> actionsTaken = new List<ActionType>();
     public List<ActionResult> actionResults = new List<ActionResult>();
@@ -61,6 +64,12 @@ public class Fruit : MonoBehaviour
         if (spriteRenderer == null)
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        // Получаем GameManager если не назначен
+        if (gameManager == null)
+        {
+            gameManager = FindObjectOfType<GameManager>();
         }
 
         // Показываем начальный спрайт (семя)
@@ -108,6 +117,17 @@ public class Fruit : MonoBehaviour
             Debug.Log($"[FRUIT] Все действия выполнены! Расчет финального результата...");
             CalculateFinalResults();
             OnGrowthComplete?.Invoke(this);
+
+            // Вызываем EndGame из GameManager
+            if (gameManager != null)
+            {
+                Debug.Log($"[FRUIT] Вызов EndGame из GameManager");
+                gameManager.EndGame();
+            }
+            else
+            {
+                Debug.LogWarning($"[FRUIT] GameManager не найден!");
+            }
         }
 
         Debug.Log($"[FRUIT] Текущая последовательность: [{string.Join(", ", actionsTaken)}]");
