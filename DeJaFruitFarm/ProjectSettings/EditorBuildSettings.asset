@@ -17,15 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Root/Content/Scenes/Collection.unity
     guid: 03e8f062cfdba4074bc0368c50fe93e7
-  - enabled: 1
-    path: Assets/Root/Content/Scenes/Alexzander.unity
-    guid: f9b43c5e5f7104eb2b07225a5adcfe1f
-  - enabled: 1
-    path: Assets/Root/Content/Scenes/Gleb.unity
-    guid: 822fa22d2637b4bf8912bc1d13cea090
-  - enabled: 1
-    path: Assets/Root/Content/Scenes/Vano.unity
-    guid: 85ae979788e644cde84795fe4f71240e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
