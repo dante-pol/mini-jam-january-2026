@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -25,6 +26,13 @@ public class FruitGrowthCompleteEvent : UnityEvent<Fruit> { }
 
 public class Fruit : MonoBehaviour
 {
+    [Header("Анимация исчезновения")]
+    public float fadeOutDuration = 0.3f; // Длительность исчезновения старого спрайта
+    public AnimationCurve fadeOutCurve = AnimationCurve.EaseInOut(0, 1, 1, 0);
+
+    private Coroutine currentAnimation;
+
+
     [Header("Настройки фрукта")]
     public string fruitName;
     public ActionType[] idealCombo = new ActionType[4];
@@ -143,13 +151,231 @@ public class Fruit : MonoBehaviour
         // Просто показываем следующий спрайт из growthSprites
         if (currentStage < growthSprites.Length && growthSprites[currentStage] != null)
         {
-            spriteRenderer.sprite = growthSprites[currentStage];
+            StartCoroutine(FadeOutOldSprite(growthSprites[currentStage]));
+            // ИЛИ Вариант 2: Уменьшение с вращением
+            //StartCoroutine(ShrinkOldSprite(growthSprites[currentStage]));
+
+            // ИЛИ Вариант 3: Эффект пузырьков
+            //StartCoroutine(BubbleFadeOldSprite(growthSprites[currentStage]));
             Debug.Log($"[FRUIT] Спрайт обновлен: growthSprites[{currentStage}]");
         }
         else
         {
             Debug.LogWarning($"[FRUIT] Спрайт для стадии {currentStage} не найден!");
         }
+    }
+
+    // Анимация исчезновения старого спрайта
+    private IEnumerator FadeOutOldSprite(Sprite newSprite)
+    {
+        // Останавливаем предыдущую анимацию, если она есть
+        if (currentAnimation != null)
+        {
+            StopCoroutine(currentAnimation);
+        }
+
+        // Сохраняем старый спрайт
+        Sprite oldSprite = spriteRenderer.sprite;
+
+        // Если это самый первый спрайт (семя), просто показываем новый
+        if (oldSprite == null || currentStage == 0)
+        {
+            spriteRenderer.sprite = newSprite;
+            yield break;
+        }
+
+        // Создаем временный объект для старого спрайта
+        GameObject oldSpriteObject = new GameObject("OldSpriteFadeOut");
+        oldSpriteObject.transform.SetParent(transform, false);
+        oldSpriteObject.transform.localPosition = Vector3.zero;
+
+        SpriteRenderer oldSpriteRenderer = oldSpriteObject.AddComponent<SpriteRenderer>();
+        oldSpriteRenderer.sprite = oldSprite;
+        oldSpriteRenderer.sortingOrder = spriteRenderer.sortingOrder - 1;
+        oldSpriteRenderer.color = spriteRenderer.color;
+
+        // Немного смещаем старый спрайт для эффекта
+        oldSpriteObject.transform.localPosition = new Vector3(0, 0.1f, 0);
+
+        // Сразу показываем новый спрайт (полупрозрачный)
+        spriteRenderer.sprite = newSprite;
+        Color newColor = spriteRenderer.color;
+        newColor.a = 0.7f; // Полупрозрачный в начале
+        spriteRenderer.color = newColor;
+
+        // Анимация исчезновения старого спрайта
+        float timer = 0f;
+
+        while (timer < fadeOutDuration)
+        {
+            timer += Time.deltaTime;
+            float progress = timer / fadeOutDuration;
+            float curveValue = fadeOutCurve.Evaluate(progress);
+
+            // Старый спрайт исчезает и смещается вверх
+            Color oldColor = oldSpriteRenderer.color;
+            oldColor.a = curveValue;
+            oldSpriteRenderer.color = oldColor;
+
+            // Слегка поднимаем старый спрайт
+            Vector3 pos = oldSpriteObject.transform.localPosition;
+            pos.y = 0.1f + progress * 0.2f; // Поднимаем вверх
+            oldSpriteObject.transform.localPosition = pos;
+
+            // Новый спрайт становится полностью видимым
+            if (progress > 0.5f)
+            {
+                newColor.a = 0.7f + (progress - 0.5f) * 0.6f; // От 0.7 до 1.0
+                spriteRenderer.color = newColor;
+            }
+
+            yield return null;
+        }
+
+        // Финальные значения
+        spriteRenderer.color = Color.white;
+
+        // Уничтожаем временный объект
+        Destroy(oldSpriteObject);
+
+        currentAnimation = null;
+    }
+
+    // Вариант 2: Анимация уменьшения старого спрайта
+    private IEnumerator ShrinkOldSprite(Sprite newSprite)
+    {
+        Sprite oldSprite = spriteRenderer.sprite;
+
+        if (oldSprite == null || currentStage == 0)
+        {
+            spriteRenderer.sprite = newSprite;
+            yield break;
+        }
+
+        // Создаем временный объект
+        GameObject oldSpriteObject = new GameObject("OldSpriteShrink");
+        oldSpriteObject.transform.SetParent(transform, false);
+        oldSpriteObject.transform.localPosition = Vector3.zero;
+        oldSpriteObject.transform.localScale = Vector3.one;
+
+        SpriteRenderer oldSpriteRenderer = oldSpriteObject.AddComponent<SpriteRenderer>();
+        oldSpriteRenderer.sprite = oldSprite;
+        oldSpriteRenderer.sortingOrder = spriteRenderer.sortingOrder - 1;
+
+        // Сразу показываем новый спрайт
+        spriteRenderer.sprite = newSprite;
+
+        // Анимация уменьшения старого спрайта
+        float timer = 0f;
+        Vector3 startScale = Vector3.one;
+        Vector3 endScale = Vector3.zero;
+
+        while (timer < fadeOutDuration)
+        {
+            timer += Time.deltaTime;
+            float progress = timer / fadeOutDuration;
+
+            // Плавное уменьшение
+            oldSpriteObject.transform.localScale = Vector3.Lerp(startScale, endScale, progress);
+
+            // Немного вращаем
+            oldSpriteObject.transform.Rotate(0, 0, 45 * Time.deltaTime);
+
+            yield return null;
+        }
+
+        Destroy(oldSpriteObject);
+    }
+
+    // Вариант 3: Анимация "всплывания пузырьков" для старого спрайта
+    private IEnumerator BubbleFadeOldSprite(Sprite newSprite)
+    {
+        Sprite oldSprite = spriteRenderer.sprite;
+
+        if (oldSprite == null || currentStage == 0)
+        {
+            spriteRenderer.sprite = newSprite;
+            yield break;
+        }
+
+        GameObject oldSpriteObject = new GameObject("OldSpriteBubble");
+        oldSpriteObject.transform.SetParent(transform, false);
+
+        SpriteRenderer oldSpriteRenderer = oldSpriteObject.AddComponent<SpriteRenderer>();
+        oldSpriteRenderer.sprite = oldSprite;
+        oldSpriteRenderer.sortingOrder = spriteRenderer.sortingOrder - 1;
+
+        // Показываем новый спрайт
+        spriteRenderer.sprite = newSprite;
+
+        // Создаем эффект "пузырьков" через несколько маленьких объектов
+        int bubbleCount = 8;
+        GameObject[] bubbles = new GameObject[bubbleCount];
+
+        for (int i = 0; i < bubbleCount; i++)
+        {
+            bubbles[i] = new GameObject($"Bubble_{i}");
+            bubbles[i].transform.SetParent(oldSpriteObject.transform, false);
+
+            SpriteRenderer bubbleRenderer = bubbles[i].AddComponent<SpriteRenderer>();
+            bubbleRenderer.sprite = oldSprite;
+            bubbleRenderer.sortingOrder = oldSpriteRenderer.sortingOrder;
+
+            // Маска для отображения только части спрайта
+            // (здесь нужен шейдер для маскирования, но для простоты сделаем через scale)
+            bubbles[i].transform.localScale = new Vector3(0.3f, 0.3f, 1f);
+            bubbles[i].transform.localPosition = new Vector3(
+                UnityEngine.Random.Range(-0.5f, 0.5f),
+                UnityEngine.Random.Range(-0.5f, 0.5f),
+                0
+            );
+        }
+
+        // Анимация "всплывания" пузырьков
+        float timer = 0f;
+
+        while (timer < fadeOutDuration)
+        {
+            timer += Time.deltaTime;
+            float progress = timer / fadeOutDuration;
+
+            // Старый спрайт становится прозрачным
+            Color color = oldSpriteRenderer.color;
+            color.a = 1f - progress;
+            oldSpriteRenderer.color = color;
+
+            // Пузырьки разлетаются
+            for (int i = 0; i < bubbleCount; i++)
+            {
+                if (bubbles[i] != null)
+                {
+                    Vector3 pos = bubbles[i].transform.localPosition;
+                    pos.y += Time.deltaTime * 2f; // Всплывают вверх
+                    pos.x += Mathf.Sin(Time.time * 10f + i) * 0.01f; // Легкое колебание
+                    bubbles[i].transform.localPosition = pos;
+
+                    // Уменьшаются
+                    float scale = 0.3f * (1f - progress);
+                    bubbles[i].transform.localScale = new Vector3(scale, scale, 1f);
+
+                    // Становятся прозрачными
+                    SpriteRenderer br = bubbles[i].GetComponent<SpriteRenderer>();
+                    Color bubbleColor = br.color;
+                    bubbleColor.a = 1f - progress;
+                    br.color = bubbleColor;
+                }
+            }
+
+            yield return null;
+        }
+
+        // Уничтожаем все объекты
+        for (int i = 0; i < bubbleCount; i++)
+        {
+            if (bubbles[i] != null)
+                Destroy(bubbles[i]);
+        }
+        Destroy(oldSpriteObject);
     }
 
     // Проверяем результат выполненного действия
@@ -226,21 +452,26 @@ public class Fruit : MonoBehaviour
         // Отрисовываем финальный спрайт
         if (spriteRenderer != null)
         {
+            Sprite finalSprite = null;
+
             if (isPerfect && perfectFruitSprite != null)
             {
-                // Все 4 действия правильные - показываем идеальный фрукт
-                spriteRenderer.sprite = perfectFruitSprite;
+                finalSprite = perfectFruitSprite;
                 Debug.Log($"[FRUIT] Отрисован идеальный фрукт!");
             }
             else if (mutationCount > 0 && mutationCount <= mutationSprites.Length)
             {
-                // Есть мутации - показываем соответствующий спрайт
                 int mutationIndex = mutationCount - 1;
                 if (mutationSprites[mutationIndex] != null)
                 {
-                    spriteRenderer.sprite = mutationSprites[mutationIndex];
-                    Debug.Log($"[FRUIT] Отрисован фрукт с мутацией: mutationSprites[{mutationIndex}] (Correct действий: {correctCount})");
+                    finalSprite = mutationSprites[mutationIndex];
+                    Debug.Log($"[FRUIT] Отрисован фрукт с мутацией: mutationSprites[{mutationIndex}]");
                 }
+            }
+
+            if (finalSprite != null)
+            {
+                StartCoroutine(FadeOutOldSprite(finalSprite));
             }
         }
 
