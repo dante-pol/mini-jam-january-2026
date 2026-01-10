@@ -3,6 +3,12 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Цвета результатов")]
+    [SerializeField] private Color correctColor = Color.green;
+    [SerializeField] private Color wrongOrderColor = Color.yellow;
+    [SerializeField] private Color notInComboColor = Color.red;
+
+
     [Header("UI Панели")]
     [SerializeField] private GameObject mainGamePanel;
     [SerializeField] private GameObject victoryPanel;
@@ -105,18 +111,18 @@ public class GameManager : MonoBehaviour
         int index = (int)action;
         return index < actionSprites.Length ? actionSprites[index] : null;
     }
-    
+
     Color GetActionColor(ActionResult result)
     {
         return result switch
         {
-            ActionResult.Correct => Color.green,      // ✅ Правильно
-            ActionResult.WrongOrder => Color.yellow,  // ⚠️ Есть, но не там
-            ActionResult.NotInCombo => Color.red,     // ❌ Нет в комбинации
+            ActionResult.Correct => correctColor,
+            ActionResult.WrongOrder => wrongOrderColor,
+            ActionResult.NotInCombo => notInComboColor,
             _ => Color.white
         };
     }
-    
+
     public void MainMenu()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
