@@ -20,4 +20,9 @@ public class UiManager: MonoBehaviour
     {
         SceneManager.LoadScene("NiceIlya");
     }
+    
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

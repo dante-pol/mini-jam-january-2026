@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
     
     void Awake()
     {
-        // Делаем активной панель победы (скрываем геймплей)
-        if (victoryPanel != null) victoryPanel.SetActive(true);
-        if (mainGamePanel != null) mainGamePanel.SetActive(false);
+        
+        if (victoryPanel != null) victoryPanel.SetActive(false);
+        if (mainGamePanel != null) mainGamePanel.SetActive(true);
         
         // Находим текущий фрукт
         currentFruit = FindObjectOfType<Fruit>();
