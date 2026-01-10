@@ -248,6 +248,8 @@ public class Fruit : MonoBehaviour
         Debug.Log($"[FRUIT] Качество: {quality}%");
         Debug.Log($"[FRUIT] Мутации: {mutationCount}");
         Debug.Log($"[FRUIT] Идеальный: {isPerfect}");
+
+        SaveManager.SaveFruitResult(fruitName, quality, isPerfect);
     }
 
     // Публичный метод для сброса фрукта
