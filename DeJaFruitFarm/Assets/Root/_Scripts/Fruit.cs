@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -25,6 +26,11 @@ public class FruitGrowthCompleteEvent : UnityEvent<Fruit> { }
 
 public class Fruit : MonoBehaviour
 {
+    [Header("Анимация исчезновения")]
+    public float animationDuration = 1.5f; // Длительность анимации
+    public float scaleMultiplier = 1.3f; // Во сколько раз увеличиваем старый спрайт
+    public AnimationCurve scaleCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+
     [Header("Настройки фрукта")]
     public string fruitName;
     public ActionType[] idealCombo = new ActionType[4];
@@ -140,16 +146,114 @@ public class Fruit : MonoBehaviour
     {
         if (spriteRenderer == null) return;
 
-        // Просто показываем следующий спрайт из growthSprites
         if (currentStage < growthSprites.Length && growthSprites[currentStage] != null)
         {
-            spriteRenderer.sprite = growthSprites[currentStage];
+            StartCoroutine(ScaleUpOldSprite(growthSprites[currentStage]));
             Debug.Log($"[FRUIT] Спрайт обновлен: growthSprites[{currentStage}]");
         }
         else
         {
             Debug.LogWarning($"[FRUIT] Спрайт для стадии {currentStage} не найден!");
         }
+    }
+
+    public bool isAnimating = false;
+    private IEnumerator ScaleUpOldSprite(Sprite newSprite)
+    {
+        // Если уже анимируется, выходим
+        if (isAnimating) yield break;
+        isAnimating = true;
+
+        // Сохраняем старый спрайт
+        Sprite oldSprite = spriteRenderer.sprite;
+
+        // Если это самый первый спрайт (семя), просто показываем новый
+        if (oldSprite == null || oldSprite == growthSprites[0])
+        {
+            spriteRenderer.sprite = newSprite;
+            isAnimating = false;
+            yield break;
+        }
+
+        Debug.Log($"[ANIMATION] Старт анимации. Старый спрайт: {oldSprite.name}, Новый: {newSprite?.name}");
+
+        // 1. СОХРАНЯЕМ текущий sortingOrder основного спрайта
+        int originalSortingOrder = spriteRenderer.sortingOrder;
+
+        // 2. Создаем временный объект для старого спрайта
+        GameObject oldSpriteObject = new GameObject("OldSpriteScaleUp");
+        oldSpriteObject.transform.SetParent(transform, false);
+        oldSpriteObject.transform.localPosition = Vector3.zero;
+        oldSpriteObject.transform.localScale = Vector3.one;
+
+        SpriteRenderer oldSpriteRenderer = oldSpriteObject.AddComponent<SpriteRenderer>();
+        oldSpriteRenderer.sprite = oldSprite;
+        oldSpriteRenderer.sortingOrder = originalSortingOrder + 1; // ВЫШЕ основного
+        oldSpriteRenderer.color = Color.white; // Явно задаем цвет
+
+        // 3. Сразу показываем новый спрайт в основном рендерере, но прозрачный
+        spriteRenderer.sprite = newSprite;
+        spriteRenderer.color = new Color(1, 1, 1, 0); // Полностью прозрачный
+        spriteRenderer.sortingOrder = originalSortingOrder; // Сохраняем порядок
+
+        // Анимация
+        float timer = 0f;
+
+        while (timer < animationDuration)
+        {
+            timer += Time.deltaTime;
+            float progress = timer / animationDuration;
+
+            // 4. Увеличиваем старый спрайт (линейно)
+            float scale = 1f + (scaleMultiplier - 1f) * progress;
+            oldSpriteObject.transform.localScale = Vector3.one * scale;
+
+            // 5. ОЧЕНЬ МЕДЛЕННОЕ исчезновение старого спрайта
+            // Старый спрайт виден первые 80%, потом медленно исчезает
+            float fadeStart = 0.8f;
+            if (progress < fadeStart)
+            {
+                // Держим старый спрайт полностью видимым
+                oldSpriteRenderer.color = Color.white;
+            }
+            else
+            {
+                // Плавное исчезновение последние 20%
+                float fadeProgress = (progress - fadeStart) / (1f - fadeStart);
+                Color oldColor = oldSpriteRenderer.color;
+                oldColor.a = 1f - fadeProgress;
+                oldSpriteRenderer.color = oldColor;
+
+                // Логируем для отладки
+                if (Mathf.Approximately(fadeProgress, 0.5f))
+                {
+                    Debug.Log($"[ANIMATION] Старый спрайт альфа: {oldColor.a}");
+                }
+            }
+
+            // 6. Новый спрайт постепенно появляется с начала
+            // Начинаем сразу, но очень медленно
+            float newAlpha = progress * 0.8f; // К концу анимации будет 80% прозрачности
+            spriteRenderer.color = new Color(1, 1, 1, newAlpha);
+
+            // 7. В конце анимации новый спрайт становится полностью видимым
+            if (progress >= 0.95f)
+            {
+                spriteRenderer.color = Color.white;
+            }
+
+            yield return null;
+        }
+
+        // 8. Финальные настройки - новый спрайт полностью видим
+        spriteRenderer.color = Color.white;
+        spriteRenderer.sortingOrder = originalSortingOrder;
+
+        // 9. Уничтожаем временный объект
+        Destroy(oldSpriteObject);
+
+        Debug.Log($"[ANIMATION] Анимация завершена");
+        isAnimating = false;
     }
 
     // Проверяем результат выполненного действия
@@ -222,27 +326,32 @@ public class Fruit : MonoBehaviour
 
         // Проверяем, идеален ли фрукт
         isPerfect = (correctCount == REQUIRED_ACTIONS_COUNT);
-
         // Отрисовываем финальный спрайт
         if (spriteRenderer != null)
         {
+            Sprite finalSprite = null;
+
             if (isPerfect && perfectFruitSprite != null)
             {
-                // Все 4 действия правильные - показываем идеальный фрукт
-                spriteRenderer.sprite = perfectFruitSprite;
+                finalSprite = perfectFruitSprite;
                 Debug.Log($"[FRUIT] Отрисован идеальный фрукт!");
             }
             else if (mutationCount > 0 && mutationCount <= mutationSprites.Length)
             {
-                // Есть мутации - показываем соответствующий спрайт
                 int mutationIndex = mutationCount - 1;
                 if (mutationSprites[mutationIndex] != null)
                 {
-                    spriteRenderer.sprite = mutationSprites[mutationIndex];
-                    Debug.Log($"[FRUIT] Отрисован фрукт с мутацией: mutationSprites[{mutationIndex}] (Correct действий: {correctCount})");
+                    finalSprite = mutationSprites[mutationIndex];
+                    Debug.Log($"[FRUIT] Отрисован фрукт с мутацией: mutationSprites[{mutationIndex}]");
                 }
             }
+
+            if (finalSprite != null)
+            {
+                StartCoroutine(ScaleUpOldSprite(finalSprite));
+            }
         }
+
 
         Debug.Log($"[FRUIT] РЕЗУЛЬТАТ ДЛЯ ФРУКТА '{fruitName}':");
         Debug.Log($"[FRUIT] Качество: {quality}%");
