@@ -3099,10 +3099,10 @@ MonoBehaviour:
   pruneSprite: {fileID: -4967319096355825122, guid: fe6cd29e5b358a04698f3c8773c6a634, type: 3}
   waitSprite: {fileID: 258971280866002208, guid: fe6cd29e5b358a04698f3c8773c6a634, type: 3}
   actionResultSlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 741946197}
+  - {fileID: 521450774}
+  - {fileID: 635856395}
+  - {fileID: 836513246}
   resultText: {fileID: 0}
   fruitNameText: {fileID: 0}
 --- !u!114 &1739802786
