@@ -3,26 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Перечисление возможных типов действий
 public enum ActionType
 {
-    Water,          // Полив
-    Fertilizer,     // Удобрение
-    Sun,            // Солнце
-    SpecialLight,   // Специальный свет
-    Prune,          // Обрезка
-    Wait            // Ожидание
+    Water,
+    Fertilizer,
+    Sun,
+    SpecialLight,
+    Prune,
+    Wait
 }
 
-// Результат выполнения действия
 public enum ActionResult
 {
-    Correct,        // Действие есть и выполнено в правильный момент
-    WrongOrder,     // Действие есть, но не в правильный момент
-    NotInCombo      // Действие отсутствует в комбинации
+    Correct,
+    WrongOrder,
+    NotInCombo
 }
 
-// Класс для передачи данных о результате выращивания
 [System.Serializable]
 public class FruitGrowthCompleteEvent : UnityEvent<Fruit> { }
 
@@ -30,14 +27,17 @@ public class Fruit : MonoBehaviour
 {
     [Header("Настройки фрукта")]
     public string fruitName;
-    public ActionType[] idealCombo = new ActionType[4]; // Идеальная комбинация из 4 действий
+    public ActionType[] idealCombo = new ActionType[4];
     public Sprite[] growthSprites = new Sprite[4];
     public Sprite[] mutationSprites = new Sprite[4];
-    public Sprite perfectFruitSprite; // Отдельный спрайт для идеального фрукта
+    public Sprite perfectFruitSprite;
+
+    [Header("Визуал")]
+    public SpriteRenderer spriteRenderer;
 
     [Header("Состояние")]
     public List<ActionType> actionsTaken = new List<ActionType>();
-    public List<ActionResult> actionResults = new List<ActionResult>(); // Результаты каждого действия
+    public List<ActionResult> actionResults = new List<ActionResult>();
     public int currentStage = 0;
     public int quality = 0;
     public bool isPerfect = false;
@@ -46,9 +46,8 @@ public class Fruit : MonoBehaviour
     [Header("События")]
     public FruitGrowthCompleteEvent OnGrowthComplete = new FruitGrowthCompleteEvent();
 
-    private const int REQUIRED_ACTIONS_COUNT = 4; // Нужно выполнить 4 действия
+    private const int REQUIRED_ACTIONS_COUNT = 4;
 
-    // Инициализация фрукта (можно вызвать при создании)
     public void Start()
     {
         actionsTaken.Clear();
@@ -57,43 +56,88 @@ public class Fruit : MonoBehaviour
         quality = 0;
         isPerfect = false;
         mutationCount = 0;
+
+        // Получаем SpriteRenderer если не назначен
+        if (spriteRenderer == null)
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        // Показываем начальный спрайт (семя)
+        if (spriteRenderer != null && growthSprites.Length > 0 && growthSprites[0] != null)
+        {
+            spriteRenderer.sprite = growthSprites[0];
+            Debug.Log($"[FRUIT] Установлен начальный спрайт: growthSprites[0]");
+        }
+
+        Debug.Log($"[FRUIT] Инициализация фрукта: {fruitName}");
+        Debug.Log($"[FRUIT] Идеальная комбинация: [{string.Join(", ", idealCombo)}]");
     }
 
     // Выполнить действие (вызывается при нажатии кнопки)
     public int PerformAction(ActionType action)
     {
+        Debug.Log($"[FRUIT] Попытка выполнить действие: {action}");
+
         if (actionsTaken.Count >= REQUIRED_ACTIONS_COUNT)
         {
-            Debug.LogWarning("Все действия уже выполнены!");
-            return -1; // Возвращаем -1, если все действия уже выполнены
+            Debug.LogWarning($"[FRUIT] Все действия уже выполнены!");
+            return -1;
         }
 
-        int currentStep = actionsTaken.Count; // Номер текущего действия (0-3)
+        int currentStep = actionsTaken.Count;
         actionsTaken.Add(action);
+
+        Debug.Log($"[FRUIT] Действие добавлено. Шаг: {currentStep + 1}/{REQUIRED_ACTIONS_COUNT}");
 
         // Проверяем результат действия
         ActionResult result = CheckActionResult(action, currentStep);
-
-        // Сохраняем результат
         actionResults.Add(result);
 
-        // Если выполнили все 4 действия - обновляем состояние и уведомляем
+        Debug.Log($"[FRUIT] Результат: {result}");
+
+        // Обновляем стадию роста
+        currentStage = currentStep + 1;
+
+        // Показываем следующий спрайт роста
+        UpdateVisual();
+
+        // Если выполнили все 4 действия - обновляем состояние
         if (actionsTaken.Count == REQUIRED_ACTIONS_COUNT)
         {
+            Debug.Log($"[FRUIT] Все действия выполнены! Расчет финального результата...");
             CalculateFinalResults();
-
-            // Уведомляем всех подписчиков о завершении выращивания
             OnGrowthComplete?.Invoke(this);
         }
 
-        // Возвращаем номер выполненного действия (начиная с 0)
-        return currentStep;
+        Debug.Log($"[FRUIT] Текущая последовательность: [{string.Join(", ", actionsTaken)}]");
+
+        return currentStep + 1;
+    }
+
+    // Обновить визуал после действия
+    private void UpdateVisual()
+    {
+        if (spriteRenderer == null) return;
+
+        // Просто показываем следующий спрайт из growthSprites
+        if (currentStage < growthSprites.Length && growthSprites[currentStage] != null)
+        {
+            spriteRenderer.sprite = growthSprites[currentStage];
+            Debug.Log($"[FRUIT] Спрайт обновлен: growthSprites[{currentStage}]");
+        }
+        else
+        {
+            Debug.LogWarning($"[FRUIT] Спрайт для стадии {currentStage} не найден!");
+        }
     }
 
     // Проверяем результат выполненного действия
     private ActionResult CheckActionResult(ActionType action, int step)
     {
-        // Проверяем, есть ли действие в идеальной комбинации
+        Debug.Log($"[FRUIT] Проверка действия '{action}' на шаге {step}");
+        Debug.Log($"[FRUIT] Ожидаемое действие: {idealCombo[step]}");
+
         bool actionInCombo = false;
         int correctIndex = -1;
 
@@ -102,45 +146,52 @@ public class Fruit : MonoBehaviour
             if (idealCombo[i] == action)
             {
                 actionInCombo = true;
-                if (i == step)
-                {
-                    correctIndex = i;
-                    break;
-                }
+                correctIndex = i;
+                Debug.Log($"[FRUIT] Действие найдено в комбинации на позиции {i}");
+                break;
             }
         }
 
         if (!actionInCombo)
         {
-            return ActionResult.NotInCombo; // Действия нет в комбинации
+            Debug.Log($"[FRUIT] Действие отсутствует в идеальной комбинации");
+            return ActionResult.NotInCombo;
         }
 
         if (correctIndex == step)
         {
-            return ActionResult.Correct; // Действие в правильном месте и порядке
+            Debug.Log($"[FRUIT] Действие выполнено в правильный момент");
+            return ActionResult.Correct;
         }
 
-        return ActionResult.WrongOrder; // Действие есть, но не на своем месте
+        Debug.Log($"[FRUIT] Действие есть, но не в правильном порядке");
+        return ActionResult.WrongOrder;
     }
 
     // Рассчитываем финальные результаты после выполнения всех действий
     private void CalculateFinalResults()
     {
-        // Подсчитываем количество правильных действий
+        Debug.Log($"[FRUIT] РАСЧЕТ ФИНАЛЬНОГО РЕЗУЛЬТАТА");
+
         int correctCount = 0;
         int wrongOrderCount = 0;
         int notInComboCount = 0;
 
-        foreach (var result in actionResults)
+        for (int i = 0; i < actionResults.Count; i++)
         {
-            if (result == ActionResult.Correct)
+            Debug.Log($"[FRUIT] Шаг {i + 1}: {actionsTaken[i]} -> {actionResults[i]}");
+
+            if (actionResults[i] == ActionResult.Correct)
                 correctCount++;
-            else if (result == ActionResult.WrongOrder)
+            else if (actionResults[i] == ActionResult.WrongOrder)
                 wrongOrderCount++;
             else
                 notInComboCount++;
-
         }
+
+        Debug.Log($"[FRUIT] Правильных действий: {correctCount}/4");
+        Debug.Log($"[FRUIT] Неправильный порядок: {wrongOrderCount}");
+        Debug.Log($"[FRUIT] Не в комбинации: {notInComboCount}");
 
         // Определяем качество (0-100)
         quality = correctCount * 25 + wrongOrderCount * 10;
@@ -149,14 +200,19 @@ public class Fruit : MonoBehaviour
         // Определяем количество мутаций (0-4)
         mutationCount = 4 - correctCount;
 
-        // Проверяем, идеален ли фрукт (все 4 действия выполнены правильно)
+        // Проверяем, идеален ли фрукт
         isPerfect = (correctCount == REQUIRED_ACTIONS_COUNT);
 
-        Debug.Log($"Фрукт '{fruitName}' выращен! " +
-                  $"Правильных действий: {correctCount}/4, " +
-                  $"Качество: {quality}%, " +
-                  $"Мутации: {mutationCount}, " +
-                  $"Идеальный: {isPerfect}");
+        Debug.Log($"[FRUIT] РЕЗУЛЬТАТ ДЛЯ ФРУКТА '{fruitName}':");
+        Debug.Log($"[FRUIT] Качество: {quality}%");
+        Debug.Log($"[FRUIT] Мутации: {mutationCount}");
+        Debug.Log($"[FRUIT] Идеальный: {isPerfect}");
     }
 
+    // Публичный метод для сброса фрукта
+    public void ResetFruit()
+    {
+        Debug.Log($"[FRUIT] Сброс фрукта '{fruitName}'");
+        Start();
+    }
 }
