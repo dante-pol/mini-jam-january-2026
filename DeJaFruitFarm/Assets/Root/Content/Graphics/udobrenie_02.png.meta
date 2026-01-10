@@ -1,0 +1,1209 @@
+fileFormatVersion: 2
+guid: 688826235f687364a8f154bf2d3a619c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1265852223988421670
+    second: udobrenie_02_0
+  - first:
+      213: 4231610229216898876
+    second: udobrenie_02_1
+  - first:
+      213: 4697215234561083582
+    second: udobrenie_02_2
+  - first:
+      213: -9140354435099143273
+    second: udobrenie_02_3
+  - first:
+      213: 7865818059525806744
+    second: udobrenie_02_4
+  - first:
+      213: 3157717733853473695
+    second: udobrenie_02_5
+  - first:
+      213: -2823527493407588140
+    second: udobrenie_02_6
+  - first:
+      213: 2058776293916796041
+    second: udobrenie_02_7
+  - first:
+      213: -7323789709084460500
+    second: udobrenie_02_8
+  - first:
+      213: 6081883450284608287
+    second: udobrenie_02_9
+  - first:
+      213: -9114400283254096488
+    second: udobrenie_02_10
+  - first:
+      213: 7948179706433464749
+    second: udobrenie_02_11
+  - first:
+      213: 5873933328128416057
+    second: udobrenie_02_12
+  - first:
+      213: -4846385062146309740
+    second: udobrenie_02_13
+  - first:
+      213: -7150139560310730060
+    second: udobrenie_02_14
+  - first:
+      213: -2752240503368604908
+    second: udobrenie_02_15
+  - first:
+      213: 2005773457668999669
+    second: udobrenie_02_16
+  - first:
+      213: 4401480090043134759
+    second: udobrenie_02_17
+  - first:
+      213: 2637373369623156409
+    second: udobrenie_02_18
+  - first:
+      213: -4248106590799171007
+    second: udobrenie_02_19
+  - first:
+      213: -5852477182875859366
+    second: udobrenie_02_20
+  - first:
+      213: 419416217679653702
+    second: udobrenie_02_21
+  - first:
+      213: -825771617036489050
+    second: udobrenie_02_22
+  - first:
+      213: 3994643935159654456
+    second: udobrenie_02_23
+  - first:
+      213: -9107113426292939289
+    second: udobrenie_02_24
+  - first:
+      213: -1396621284086249658
+    second: udobrenie_02_25
+  - first:
+      213: 902086739634798156
+    second: udobrenie_02_26
+  - first:
+      213: 2997305956270403879
+    second: udobrenie_02_27
+  - first:
+      213: 9043893782249146816
+    second: udobrenie_02_28
+  - first:
+      213: -5085082475417190188
+    second: udobrenie_02_29
+  - first:
+      213: -4665595689809914972
+    second: udobrenie_02_30
+  - first:
+      213: -8955443765705067070
+    second: udobrenie_02_31
+  - first:
+      213: -5497084774045760345
+    second: udobrenie_02_32
+  - first:
+      213: 510415344274001699
+    second: udobrenie_02_33
+  - first:
+      213: 8945460199526757667
+    second: udobrenie_02_34
+  - first:
+      213: 4371363411488275615
+    second: udobrenie_02_35
+  - first:
+      213: 1398313408785880322
+    second: udobrenie_02_36
+  - first:
+      213: 8850116640556803876
+    second: udobrenie_02_37
+  - first:
+      213: 3724781247156159841
+    second: udobrenie_02_38
+  - first:
+      213: -26098034840637431
+    second: udobrenie_02_39
+  - first:
+      213: 2914688523291222422
+    second: udobrenie_02_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: udobrenie_02_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 358
+        width: 219
+        height: 293
+      alignment: 9
+      pivot: {x: 0.50422025, y: 0.976339}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb280beb1ace6ee0800000000000000
+      internalID: -1265852223988421670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_1
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 270
+        width: 279
+        height: 364
+      alignment: 9
+      pivot: {x: 0.49668702, y: 0.9748396}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3fe16c5513b9ba30800000000000000
+      internalID: 4231610229216898876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_2
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 437
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb801917e5cdf2140800000000000000
+      internalID: 4697215234561083582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_3
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 95
+        width: 286
+        height: 551
+      alignment: 9
+      pivot: {x: 0.49999958, y: 0.976402}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 793dfb6a110f62180800000000000000
+      internalID: -9140354435099143273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_4
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 50
+        width: 309
+        height: 610
+      alignment: 9
+      pivot: {x: 0.49700868, y: 0.9818413}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89a53e9a9dff82d60800000000000000
+      internalID: 7865818059525806744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_5
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 373
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ba9437c8772db20800000000000000
+      internalID: 3157717733853473695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_6
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 324
+        width: 39
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d044e554b0d0d8d0800000000000000
+      internalID: -2823527493407588140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_7
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 323
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 984e7e6a12e329c10800000000000000
+      internalID: 2058776293916796041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_8
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 311
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2afb5c001cac5a90800000000000000
+      internalID: -7323789709084460500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_9
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 180
+        width: 107
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b8a8b56c0376450800000000000000
+      internalID: 6081883450284608287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_10
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 333
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89d7be78b35238180800000000000000
+      internalID: -9114400283254096488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_11
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 299
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da96fece45b9d4e60800000000000000
+      internalID: 7948179706433464749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_12
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 289
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9391c619d37648150800000000000000
+      internalID: 5873933328128416057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_13
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 269
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4918206967e2ebcb0800000000000000
+      internalID: -4846385062146309740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_14
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 287
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b21635f3f995cc90800000000000000
+      internalID: -7150139560310730060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_15
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 276
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 413a54c18d31ec9d0800000000000000
+      internalID: -2752240503368604908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_16
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 276
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f9844c2550f5db10800000000000000
+      internalID: 2005773457668999669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_17
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 250
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 723b9f462d2351d30800000000000000
+      internalID: 4401480090043134759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_18
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 249
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b696743b15d99420800000000000000
+      internalID: 2637373369623156409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_19
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 264
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1427b672091bb05c0800000000000000
+      internalID: -4248106590799171007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_20
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 214
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a560b9a8203d7cea0800000000000000
+      internalID: -5852477182875859366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_21
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 181
+        width: 75
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b65dbe3d012d500800000000000000
+      internalID: 419416217679653702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_22
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 236
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aea0f4e6154a84f0800000000000000
+      internalID: -825771617036489050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_23
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 192
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8381c579e73df6730800000000000000
+      internalID: 3994643935159654456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_24
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 177
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e56e9027980d9180800000000000000
+      internalID: -9107113426292939289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_25
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 199
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6470a4c77543e9ce0800000000000000
+      internalID: -1396621284086249658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_26
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 147
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4eb5883c1bd48c00800000000000000
+      internalID: 902086739634798156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_27
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 162
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 721f8a603e1989920800000000000000
+      internalID: 2997305956270403879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_28
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 152
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c903557a7d528d70800000000000000
+      internalID: 9043893782249146816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_29
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 160
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d0c1373e682e69b0800000000000000
+      internalID: -5085082475417190188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_30
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 131
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a359438079704fb0800000000000000
+      internalID: -4665595689809914972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_31
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 159
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c5b923d75fd7b380800000000000000
+      internalID: -8955443765705067070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_32
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 153
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a44bc6d58e66b3b0800000000000000
+      internalID: -5497084774045760345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_33
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 123
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32f4c532d0c551700800000000000000
+      internalID: 510415344274001699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_34
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 128
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325ff2908a8a42c70800000000000000
+      internalID: 8945460199526757667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_35
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 117
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9cf5edbcd33aac30800000000000000
+      internalID: 4371363411488275615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_36
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 106
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 205195ff2aec76310800000000000000
+      internalID: 1398313408785880322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_37
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 104
+        width: 45
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4276925d13ee1da70800000000000000
+      internalID: 8850116640556803876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_38
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 97
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16587ce3fc411b330800000000000000
+      internalID: 3724781247156159841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_39
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 85
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 900fcffb9f743aff0800000000000000
+      internalID: -26098034840637431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: udobrenie_02_40
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 63
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6916eade4cd037820800000000000000
+      internalID: 2914688523291222422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c5de941d8b0090545b3829640c3bf6ab
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      udobrenie_02_0: -1265852223988421670
+      udobrenie_02_1: 4231610229216898876
+      udobrenie_02_10: -9114400283254096488
+      udobrenie_02_11: 7948179706433464749
+      udobrenie_02_12: 5873933328128416057
+      udobrenie_02_13: -4846385062146309740
+      udobrenie_02_14: -7150139560310730060
+      udobrenie_02_15: -2752240503368604908
+      udobrenie_02_16: 2005773457668999669
+      udobrenie_02_17: 4401480090043134759
+      udobrenie_02_18: 2637373369623156409
+      udobrenie_02_19: -4248106590799171007
+      udobrenie_02_2: 4697215234561083582
+      udobrenie_02_20: -5852477182875859366
+      udobrenie_02_21: 419416217679653702
+      udobrenie_02_22: -825771617036489050
+      udobrenie_02_23: 3994643935159654456
+      udobrenie_02_24: -9107113426292939289
+      udobrenie_02_25: -1396621284086249658
+      udobrenie_02_26: 902086739634798156
+      udobrenie_02_27: 2997305956270403879
+      udobrenie_02_28: 9043893782249146816
+      udobrenie_02_29: -5085082475417190188
+      udobrenie_02_3: -9140354435099143273
+      udobrenie_02_30: -4665595689809914972
+      udobrenie_02_31: -8955443765705067070
+      udobrenie_02_32: -5497084774045760345
+      udobrenie_02_33: 510415344274001699
+      udobrenie_02_34: 8945460199526757667
+      udobrenie_02_35: 4371363411488275615
+      udobrenie_02_36: 1398313408785880322
+      udobrenie_02_37: 8850116640556803876
+      udobrenie_02_38: 3724781247156159841
+      udobrenie_02_39: -26098034840637431
+      udobrenie_02_4: 7865818059525806744
+      udobrenie_02_40: 2914688523291222422
+      udobrenie_02_5: 3157717733853473695
+      udobrenie_02_6: -2823527493407588140
+      udobrenie_02_7: 2058776293916796041
+      udobrenie_02_8: -7323789709084460500
+      udobrenie_02_9: 6081883450284608287
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
