@@ -20,12 +20,21 @@ public class UiManager: MonoBehaviour
     {
         AudioManager.Instance?.StopMusic();
         AudioManager.Instance?.PlayGameMusic();
-        SceneManager.LoadScene("NiceIlya");
+        SceneManager.LoadScene("Alexzander");
     }
 
     public void LoadGardenSecondFruit()
     {
+        AudioManager.Instance?.StopMusic();
+        AudioManager.Instance?.PlayGameMusic();
         SceneManager.LoadScene("Alexzander2");
+    }
+
+    public void LoadGardenThirdFruit()
+    {
+        AudioManager.Instance?.StopMusic();
+        AudioManager.Instance?.PlayGameMusic();
+        SceneManager.LoadScene("Alexzander3");
     }
 
 
