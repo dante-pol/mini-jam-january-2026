@@ -711,7 +711,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mutafruit
+  m_text: Fruitarium
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 42cf3f01b58e345b786159985c185d41, type: 2}
   m_sharedMaterial: {fileID: -6026256950730078848, guid: 42cf3f01b58e345b786159985c185d41, type: 2}
