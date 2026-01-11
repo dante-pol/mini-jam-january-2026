@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Root/Content/Scenes/Alexzander2.unity
     guid: f44202a6e54c7b4439c2648862880653
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/Alexzander3.unity
+    guid: 55fbacc729ab20041b022b9e600c5ebf
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
