@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour
     
     [Header("UI результаты")]
     [SerializeField] private TMPro.TextMeshProUGUI resultText;
-    [SerializeField] private TMPro.TextMeshProUGUI fruitNameText;
+    [SerializeField] private string PerfecText = "Perfect fruit!";
+    [SerializeField] private string MutationText = "Mutation obtained";
     
     private Fruit currentFruit;
     private Sprite[] actionSprites;
@@ -66,9 +67,18 @@ public class GameManager : MonoBehaviour
         // ★ НОВОЕ: Показ комбинации действий ★
         ShowPlayerActionCombo();
         
-        // Имя и качество
-        if (fruitNameText != null) fruitNameText.text = currentFruit.fruitName;
-        if (resultText != null) resultText.text = $"{currentFruit.quality}%";
+        // Имя и качество / тип результата
+        if (resultText != null)
+        {
+            if (currentFruit.isPerfect)
+            {
+                resultText.text = PerfecText;          // "Perfect!"
+            }
+            else
+            {
+                resultText.text = MutationText;        // "Mutation obtained"
+            }
+        }
         
         // Переключение панелей
         if (mainGamePanel != null) mainGamePanel.SetActive(false);
