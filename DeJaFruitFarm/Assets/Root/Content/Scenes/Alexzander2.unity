@@ -1918,23 +1918,23 @@ MonoBehaviour:
   _sunlightAnimation:
     animatedObject: {fileID: 340381897}
     animator: {fileID: 340381899}
-    duration: 4
+    duration: 3
   _uvLampAnimation:
     animatedObject: {fileID: 1000263389}
     animator: {fileID: 1000263391}
-    duration: 4
+    duration: 3
   _pruningAnimation:
     animatedObject: {fileID: 1332405520}
     animator: {fileID: 1332405522}
-    duration: 4
+    duration: 3
   _fertilizingAnimation:
     animatedObject: {fileID: 1999611903}
     animator: {fileID: 1999611905}
-    duration: 4
+    duration: 3
   _waitingAnimation:
     animatedObject: {fileID: 1133701349}
     animator: {fileID: 1133701350}
-    duration: 4
+    duration: 3
 --- !u!4 &611802885
 Transform:
   m_ObjectHideFlags: 0
