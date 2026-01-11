@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 91963832}
   - component: {fileID: 91963831}
   - component: {fileID: 91963830}
+  - component: {fileID: 91963833}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -276,7 +277,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 91963831}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 91963833}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: LoadCollection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &91963831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +328,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91963828}
   m_CullTransparentMesh: 1
+--- !u!114 &91963833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91963828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28f5af5b2c8b4c9aacbe36b5ca09279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &113607230
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +834,66 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &989299947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 989299949}
+  - component: {fileID: 989299948}
+  m_Layer: 0
+  m_Name: FruitInfoManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &989299948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989299947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00cfc47eb0535ac4c971536f6684e1da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitCode: secondFruit
+  perfectImage: {fileID: 840321258}
+  mutation75Image: {fileID: 1994872709}
+  mutation50Image: {fileID: 2005600885}
+  mutation25Image: {fileID: 1226223632}
+  mutation0Image: {fileID: 115485165}
+  perfectSilhouette: {fileID: -4531263247018178912, guid: e9f07f3182ec39d408bd900d94c18c11, type: 3}
+  mutation75Silhouette: {fileID: 2469325567653325049, guid: c7a92a035a158b44b9fb6e0d4336fc32, type: 3}
+  mutation50Silhouette: {fileID: 323666293133632099, guid: c7a92a035a158b44b9fb6e0d4336fc32, type: 3}
+  mutation25Silhouette: {fileID: 2549712794482162591, guid: c7a92a035a158b44b9fb6e0d4336fc32, type: 3}
+  mutation0Silhouette: {fileID: -75468209691025791, guid: c7a92a035a158b44b9fb6e0d4336fc32, type: 3}
+  perfectUnlocked: {fileID: -5154453142351496543, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  mutation75Unlocked: {fileID: 6409047780355242978, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  mutation50Unlocked: {fileID: -1730339781492221390, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  mutation25Unlocked: {fileID: -5995150102107979733, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  mutation0Unlocked: {fileID: 5294943729534304033, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+--- !u!4 &989299949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989299947}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6412948, y: -0.13591267, z: 8.746391}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1134168401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,7 +1176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pitaya
+  m_text: Akebia
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 440d6f2f71f024f5cbcbd057aaa14608, type: 2}
   m_sharedMaterial: {fileID: 2759094242373427774, guid: 440d6f2f71f024f5cbcbd057aaa14608, type: 2}
@@ -1606,66 +1691,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034390239}
   m_CullTransparentMesh: 1
---- !u!1 &2051757568
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2051757570}
-  - component: {fileID: 2051757569}
-  m_Layer: 0
-  m_Name: FruitInfoManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2051757569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051757568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00cfc47eb0535ac4c971536f6684e1da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fruitCode: dragonfruit
-  perfectImage: {fileID: 840321258}
-  mutation75Image: {fileID: 1994872709}
-  mutation50Image: {fileID: 2005600885}
-  mutation25Image: {fileID: 1226223632}
-  mutation0Image: {fileID: 115485165}
-  perfectSilhouette: {fileID: -3184152336506181629, guid: 18b6bd20881a34e15a17e9ccc684fb1e, type: 3}
-  mutation75Silhouette: {fileID: 5605498177460169956, guid: 8d4168e592b6f6b40983f1a6fbf96bba, type: 3}
-  mutation50Silhouette: {fileID: 2676924817761890302, guid: 8d4168e592b6f6b40983f1a6fbf96bba, type: 3}
-  mutation25Silhouette: {fileID: 2893097020632493391, guid: 8d4168e592b6f6b40983f1a6fbf96bba, type: 3}
-  mutation0Silhouette: {fileID: 5981062203613406126, guid: 8d4168e592b6f6b40983f1a6fbf96bba, type: 3}
-  perfectUnlocked: {fileID: 6298055801854777206, guid: 214c6e53ba2e23443a2e532ca5dd9eb6, type: 3}
-  mutation75Unlocked: {fileID: -2468051615502603513, guid: 0ce5dbe86978360409a9485a153e4ec1, type: 3}
-  mutation50Unlocked: {fileID: -4732328883756537350, guid: 0c329056363b35946984faa24c05f175, type: 3}
-  mutation25Unlocked: {fileID: 5711224967407102493, guid: fd9909c50963bb04eb84882728afdf67, type: 3}
-  mutation0Unlocked: {fileID: 7645152222164772839, guid: 550e62e849fcd414da6746f3b85ddfc7, type: 3}
---- !u!4 &2051757570
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051757568}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6412948, y: -0.13591267, z: 8.746391}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2112776940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,4 +1835,4 @@ SceneRoots:
   - {fileID: 936077143}
   - {fileID: 2112776944}
   - {fileID: 186707478}
-  - {fileID: 2051757570}
+  - {fileID: 989299949}
