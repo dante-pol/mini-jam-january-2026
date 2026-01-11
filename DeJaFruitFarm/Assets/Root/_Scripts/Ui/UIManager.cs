@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 public class UiManager: MonoBehaviour
 {
-
+    
     public void LoadCollection()
     {
         SceneManager.LoadScene("Collection");
     }
-
+    
     public void Exit()
     {
         Application.Quit();
@@ -39,17 +39,17 @@ public class UiManager: MonoBehaviour
 
     public void LoadDragonInfo()
     {
-        SceneManager.LoadScene("DragonPage");
+        SceneManager.LoadScene("NewDragon");
     }
 
     public void LoadAkebiaInfo()
     {
-        SceneManager.LoadScene("secondFruitPage");
+        SceneManager.LoadScene("NewAkebia");
     }
 
     public void LoadPomegranateInfo()
     {
-        SceneManager.LoadScene("thirdFruitPage");
+        SceneManager.LoadScene("newPomegranate");
     }
 
     public void LoadGardenToSasha()
