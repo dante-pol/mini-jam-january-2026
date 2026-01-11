@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 140625923}
   - component: {fileID: 140625922}
   - component: {fileID: 140625921}
+  - component: {fileID: 140625924}
   - component: {fileID: 140625920}
   m_Layer: 5
   m_Name: DragonButton
@@ -477,6 +478,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140625918}
   m_CullTransparentMesh: 1
+--- !u!114 &140625924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140625918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4a0d31ce33bce4dac895bbcc2a0a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &171037586
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +639,7 @@ GameObject:
   - component: {fileID: 172578338}
   - component: {fileID: 172578337}
   - component: {fileID: 172578336}
+  - component: {fileID: 172578340}
   m_Layer: 5
   m_Name: MoreDragon (2)
   m_TagString: Untagged
@@ -759,6 +773,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172578334}
   m_CullTransparentMesh: 1
+--- !u!114 &172578340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172578334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4a0d31ce33bce4dac895bbcc2a0a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &284802208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1290,7 @@ GameObject:
   - component: {fileID: 804514081}
   - component: {fileID: 804514080}
   - component: {fileID: 804514079}
+  - component: {fileID: 804514082}
   - component: {fileID: 804514078}
   m_Layer: 5
   m_Name: DragonButton2
@@ -1399,6 +1426,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804514076}
   m_CullTransparentMesh: 1
+--- !u!114 &804514082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804514076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4a0d31ce33bce4dac895bbcc2a0a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &806424081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,6 +1858,7 @@ GameObject:
   - component: {fileID: 988846243}
   - component: {fileID: 988846242}
   - component: {fileID: 988846241}
+  - component: {fileID: 988846244}
   - component: {fileID: 988846240}
   m_Layer: 5
   m_Name: DragonButton3
@@ -1954,6 +1994,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988846238}
   m_CullTransparentMesh: 1
+--- !u!114 &988846244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988846238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4a0d31ce33bce4dac895bbcc2a0a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1039489825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,6 +2019,7 @@ GameObject:
   - component: {fileID: 1039489829}
   - component: {fileID: 1039489828}
   - component: {fileID: 1039489827}
+  - component: {fileID: 1039489831}
   m_Layer: 5
   m_Name: MoreDragon (1)
   m_TagString: Untagged
@@ -2100,6 +2153,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039489825}
   m_CullTransparentMesh: 1
+--- !u!114 &1039489831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039489825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4a0d31ce33bce4dac895bbcc2a0a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1098412833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,6 +2347,66 @@ MonoBehaviour:
   fruitCode: secondFruit
   silhouetteSprite: {fileID: -4531263247018178912, guid: e9f07f3182ec39d408bd900d94c18c11, type: 3}
   perfectSprite: {fileID: -5154453142351496543, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+--- !u!1 &1450322777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1450322779}
+  - component: {fileID: 1450322778}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1450322778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450322777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 184963787b357ac45923433c50e7b7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _menuBackgroundMusic: {fileID: 8300000, guid: 2f903c3c52b4baf4c9943b90044e2e8e, type: 3}
+  _gameBackgroundMusic: {fileID: 8300000, guid: 287e85996ea02474795d4b4afeefa4a0, type: 3}
+  _winSound: {fileID: 8300000, guid: 192d0af68e6edb242bcaaddb5ffc665a, type: 3}
+  _mutationSound: {fileID: 8300000, guid: 9fdbeb7272aebe341a1d9e706c82faa5, type: 3}
+  _buttonClickSound: {fileID: 8300000, guid: 9674be7e23b565f428a4091bff083fa3, type: 3}
+  _buttonHoverSound: {fileID: 8300000, guid: 596c969756123704d97602081e26d490, type: 3}
+  _actionSounds:
+  - {fileID: 8300000, guid: 5d5090801c7edf747868ddc4ceded0a3, type: 3}
+  - {fileID: 8300000, guid: d544cc4fb25451246a80cc30ba0407e2, type: 3}
+  - {fileID: 8300000, guid: ba4ef5ec994ac604aab2b0a490fb55f0, type: 3}
+  - {fileID: 8300000, guid: 601ae929ef02be54f92fe365e04a2dae, type: 3}
+  - {fileID: 8300000, guid: 218ca3aa9a31d5248b912e891e6b3421, type: 3}
+  - {fileID: 8300000, guid: 6c9a9d198c09e7f41a47d03018ff0fe1, type: 3}
+  _musicVolume: 0.53
+  _sfxVolume: 0.7
+  _uiVolume: 0.5
+--- !u!4 &1450322779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450322777}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460348212
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,6 +3157,7 @@ GameObject:
   - component: {fileID: 1935717121}
   - component: {fileID: 1935717120}
   - component: {fileID: 1935717119}
+  - component: {fileID: 1935717123}
   m_Layer: 5
   m_Name: MoreDragon
   m_TagString: Untagged
@@ -3165,6 +3291,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935717117}
   m_CullTransparentMesh: 1
+--- !u!114 &1935717123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935717117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4a0d31ce33bce4dac895bbcc2a0a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2000064656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3425,6 +3563,7 @@ GameObject:
   - component: {fileID: 2108467768}
   - component: {fileID: 2108467767}
   - component: {fileID: 2108467766}
+  - component: {fileID: 2108467769}
   - component: {fileID: 2108467765}
   m_Layer: 5
   m_Name: Button
@@ -3559,6 +3698,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108467763}
   m_CullTransparentMesh: 1
+--- !u!114 &2108467769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108467763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4a0d31ce33bce4dac895bbcc2a0a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3566,3 +3717,4 @@ SceneRoots:
   - {fileID: 1661982456}
   - {fileID: 2102619547}
   - {fileID: 1098412836}
+  - {fileID: 1450322779}

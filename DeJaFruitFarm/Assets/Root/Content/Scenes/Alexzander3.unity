@@ -1967,7 +1967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruitName: thirdFruit
-  idealCombo: 02000000000000000100000004000000
+  idealCombo: 00000000040000000200000003000000
   growthSprites:
   - {fileID: -8429927186702210374, guid: 7c2bdc231d8c1714d8f2c9c2bce89f0e, type: 3}
   - {fileID: -7446703781038962872, guid: 7c2bdc231d8c1714d8f2c9c2bce89f0e, type: 3}
