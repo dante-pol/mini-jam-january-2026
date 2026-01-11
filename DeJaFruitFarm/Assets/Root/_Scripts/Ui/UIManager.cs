@@ -21,6 +21,12 @@ public class UiManager: MonoBehaviour
         SceneManager.LoadScene("NiceIlya");
     }
 
+    public void LoadGardenSecondFruit()
+    {
+        SceneManager.LoadScene("Alexzander2");
+    }
+
+
     public void LoadGardenToSasha()
     {
         SceneManager.LoadScene("Alexzander");

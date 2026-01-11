@@ -1630,7 +1630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bc993aac9dff44ca4e8b45ee5fbd18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fruitName: dragonfruit
+  fruitName: secondFruit
   idealCombo: 00000000010000000200000003000000
   growthSprites:
   - {fileID: 7640981238015577660, guid: fbb9acf06b38d86498de46cc52b6cc06, type: 3}
