@@ -1,55 +1,129 @@
 using UnityEngine;
 using System.Collections;
 
+[System.Serializable]
+public class AnimationData
+{
+    public GameObject animatedObject;
+    public Animator animator;
+    public float duration;
+}
+
 public class ActionAnimator : MonoBehaviour
 {
-    [Header("Объект лейки")]
-    [SerializeField] private GameObject _wateringCanObject;
-    [SerializeField] private Animator _wateringCanAnimator;
-
-    [Header("Настройки")]
-    [SerializeField] private string _animationName = "WateringCan_Pour";
-    [SerializeField] private float _animationDuration = 2f;
+    [Header("Анимации действий")]
+    [SerializeField] private AnimationData _wateringAnimation;
+    [SerializeField] private AnimationData _sunlightAnimation;
+    [SerializeField] private AnimationData _uvLampAnimation;
+    [SerializeField] private AnimationData _pruningAnimation;
+    [SerializeField] private AnimationData _fertilizingAnimation;
+    [SerializeField] private AnimationData _waitingAnimation;
 
     private void Start()
     {
-        if (_wateringCanObject != null)
-        {
-            _wateringCanObject.SetActive(false);
-        }
+        HideAllObjects();
+        DisableAllAnimators();
+    }
 
-        // Отключаем автоплей анимации
-        if (_wateringCanAnimator != null)
+    private void HideAllObjects()
+    {
+        HideAnimation(_wateringAnimation);
+        HideAnimation(_sunlightAnimation);
+        HideAnimation(_uvLampAnimation);
+        HideAnimation(_pruningAnimation);
+        HideAnimation(_fertilizingAnimation);
+        HideAnimation(_waitingAnimation);
+    }
+
+    private void DisableAllAnimators()
+    {
+        DisableAnimator(_wateringAnimation);
+        DisableAnimator(_sunlightAnimation);
+        DisableAnimator(_uvLampAnimation);
+        DisableAnimator(_pruningAnimation);
+        DisableAnimator(_fertilizingAnimation);
+        DisableAnimator(_waitingAnimation);
+    }
+
+    private void HideAnimation(AnimationData data)
+    {
+        if (data.animatedObject != null)
         {
-            _wateringCanAnimator.enabled = false;
+            data.animatedObject.SetActive(false);
         }
     }
+
+    private void DisableAnimator(AnimationData data)
+    {
+        if (data.animator != null)
+        {
+            data.animator.enabled = false;
+        }
+    }
+
+    #region Public Methods for Buttons
 
     public void PlayWateringAnimation()
     {
-        _wateringCanObject.SetActive(true);
-        StartCoroutine(WateringAnimationCoroutine());
+        StartCoroutine(PlaySimpleAnimation(_wateringAnimation, 0));
     }
 
-    private IEnumerator WateringAnimationCoroutine()
+    public void PlaySunlightAnimation()
     {
-        if (_wateringCanObject == null || _wateringCanAnimator == null) yield break;
+        StartCoroutine(PlaySimpleAnimation(_sunlightAnimation, 2));
+    }
+
+    public void PlayUVLampAnimation()
+    {
+        StartCoroutine(PlaySimpleAnimation(_uvLampAnimation, 3));
+    }
+
+    public void PlayPruningAnimation()
+    {
+        StartCoroutine(PlaySimpleAnimation(_pruningAnimation, 4));
+    }
+
+    public void PlayFertilizingAnimation()
+    {
+        StartCoroutine(PlaySimpleAnimation(_fertilizingAnimation, 5));
+    }
+
+    public void PlayWaitingAnimation()
+    {
+        StartCoroutine(PlaySimpleAnimation(_waitingAnimation, 1));
+    }
+
+    #endregion
+
+    #region Animation Coroutines
+
+    private IEnumerator PlaySimpleAnimation(AnimationData data, int soundIndex)
+    {
+        if (data.animatedObject == null) yield break;
 
         // Показываем объект
-        _wateringCanObject.SetActive(true);
+        data.animatedObject.SetActive(true);
 
-        // Включаем аниматор и запускаем анимацию
-        _wateringCanAnimator.enabled = true;
-        _wateringCanAnimator.Play(_animationName, 0, 0f);
+        // Запускаем аниматор если есть
+        if (data.animator != null)
+        {
+            data.animator.enabled = true;
+        }
 
-        // Проигрываем звук
-        AudioManager.Instance?.PlayActionSound(0);
+        // Звук
+        AudioManager.Instance?.PlayActionSound(soundIndex);
 
-        // Ждём завершения анимации
-        yield return new WaitForSeconds(_animationDuration);
+        // Ждем
+        yield return new WaitForSeconds(data.duration);
 
-        // Отключаем аниматор и скрываем объект
-        _wateringCanAnimator.enabled = false;
-        _wateringCanObject.SetActive(false);
+        // Выключаем
+        if (data.animator != null)
+        {
+            data.animator.enabled = false;
+        }
+
+        data.animatedObject.SetActive(false);
     }
+
+    #endregion
 }
