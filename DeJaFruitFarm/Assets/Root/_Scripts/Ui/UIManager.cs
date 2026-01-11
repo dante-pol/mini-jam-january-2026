@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 public class UiManager: MonoBehaviour
 {
-    
+
     public void LoadCollection()
     {
         SceneManager.LoadScene("Collection");
     }
-    
+
     public void Exit()
     {
         Application.Quit();
