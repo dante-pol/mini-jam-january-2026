@@ -10,6 +10,8 @@ public class ActionButton : MonoBehaviour
     [SerializeField] public TextMeshProUGUI numberText;
 
     private Image buttonImage;
+    
+    private Button buttonComponent;  // Ссылка на Button
 
     [Header("Логика")]
     [SerializeField] public ActionType action;
@@ -22,6 +24,7 @@ public class ActionButton : MonoBehaviour
     {
         // Получаем компонент Image кнопки
         buttonImage = GetComponent<Image>();
+        buttonComponent = GetComponent<Button>();
 
         // Настройка начального вида
         if (buttonImage != null && mainSprite != null)
@@ -66,6 +69,7 @@ public class ActionButton : MonoBehaviour
         {
             buttonImage.sprite = usedSprite;
         }
+        buttonComponent.interactable = false; 
     }
 
     // Показать номер действия
