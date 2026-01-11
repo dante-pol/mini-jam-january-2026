@@ -3288,7 +3288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -476.93018, y: 19.400024}
+  m_AnchoredPosition: {x: -476.9301, y: 19.400024}
   m_SizeDelta: {x: -1165.88, y: -141.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1269327252
@@ -3369,7 +3369,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d544cc4fb25451246a80cc30ba0407e2, type: 3}
   - {fileID: 8300000, guid: ba4ef5ec994ac604aab2b0a490fb55f0, type: 3}
   - {fileID: 8300000, guid: 601ae929ef02be54f92fe365e04a2dae, type: 3}
-  - {fileID: 8300000, guid: aa7168f2bb948354eb3cd615b7d8f514, type: 3}
+  - {fileID: 8300000, guid: 218ca3aa9a31d5248b912e891e6b3421, type: 3}
   - {fileID: 8300000, guid: 6c9a9d198c09e7f41a47d03018ff0fe1, type: 3}
   _musicVolume: 0.53
   _sfxVolume: 0.7
@@ -3821,7 +3821,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -819, y: -153.49994}
+  m_AnchoredPosition: {x: -818.99994, y: -153.49994}
   m_SizeDelta: {x: -1654.06, y: -918.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362835540
