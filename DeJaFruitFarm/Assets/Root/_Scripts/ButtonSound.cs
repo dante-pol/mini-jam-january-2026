@@ -24,7 +24,7 @@ public class ButtonSound : MonoBehaviour, IPointerEnterHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         // Проверяем, что кнопка активна и интерактивна
-        if (_button != null)
+        if (_button != null && _button.IsInteractable() == true)
         {
             AudioManager.Instance?.PlayButtonHover();
         }

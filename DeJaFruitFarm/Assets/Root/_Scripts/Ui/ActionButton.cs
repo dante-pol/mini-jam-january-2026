@@ -18,6 +18,8 @@ public class ActionButton : MonoBehaviour
     [SerializeField] public Fruit plant;
 
     private bool isUsed = false;
+    public bool IsUsed => isUsed;
+
     private int actionNumber = 0;
 
     void Start()
@@ -69,7 +71,8 @@ public class ActionButton : MonoBehaviour
         {
             buttonImage.sprite = usedSprite;
         }
-        buttonComponent.interactable = false; 
+        buttonComponent.interactable = false;
+        Debug.Log(buttonComponent.interactable);
     }
 
     // Показать номер действия

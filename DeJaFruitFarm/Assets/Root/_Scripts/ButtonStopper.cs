@@ -15,6 +15,7 @@ public class ButtonStopper : MonoBehaviour
     [SerializeField] private ActionAnimator _actionAnimator;
 
     private Button[] _allButtons;
+    private bool[] _previousButtonStates;
     private bool _isAnimationPlaying = false;
 
     private void Awake()
@@ -28,6 +29,8 @@ public class ButtonStopper : MonoBehaviour
             _fertilizingButton,
             _waitingButton
         };
+
+        _previousButtonStates = new bool[_allButtons.Length];
 
         SetupButtonListeners();
     }
@@ -56,6 +59,8 @@ public class ButtonStopper : MonoBehaviour
     private void PlayAnimation(ActionType actionType)
     {
         if (_isAnimationPlaying || _actionAnimator == null) return;
+
+        SaveButtonStates();
 
         SetButtonsInteractable(false);
         _isAnimationPlaying = true;
@@ -89,8 +94,39 @@ public class ButtonStopper : MonoBehaviour
 
         yield return new WaitForSeconds(GetMaxAnimationDuration());
 
-        SetButtonsInteractable(true);
+        RestoreButtonStates();
         _isAnimationPlaying = false;
+    }
+
+    private void SaveButtonStates()
+    {
+        for (int i = 0; i < _allButtons.Length; i++)
+        {
+            if (_allButtons[i] != null)
+            {
+                _previousButtonStates[i] = _allButtons[i].interactable;
+            }
+        }
+    }
+
+    private void RestoreButtonStates()
+    {
+        for (int i = 0; i < _allButtons.Length; i++)
+        {
+            if (_allButtons[i] != null)
+            {
+                ActionButton actionButton = _allButtons[i].GetComponent<ActionButton>();
+
+                // Проверяем через свойство IsUsed
+                bool isUsed = actionButton != null && actionButton.IsUsed;
+
+                // Восстанавливаем только не использованные кнопки
+                if (_previousButtonStates[i] && !isUsed)
+                {
+                    _allButtons[i].interactable = true;
+                }
+            }
+        }
     }
 
     private void SetButtonsInteractable(bool interactable)
