@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -144,6 +145,7 @@ public class Fruit : MonoBehaviour
         if (currentStage < growthSprites.Length && growthSprites[currentStage] != null)
         {
             spriteRenderer.sprite = growthSprites[currentStage];
+            StartCoroutine(ScaleAnimation()); // Запускаем анимацию
             Debug.Log($"[FRUIT] Спрайт обновлен: growthSprites[{currentStage}]");
         }
         else
@@ -257,5 +259,36 @@ public class Fruit : MonoBehaviour
     {
         Debug.Log($"[FRUIT] Сброс фрукта '{fruitName}'");
         Start();
+    }
+
+    // Добавьте в класс Fruit
+    private IEnumerator ScaleAnimation()
+    {
+        Vector3 originalScale = transform.localScale;
+        Vector3 targetScale = originalScale * 1.2f;
+
+        // Увеличение
+        float duration = 0.2f;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            float progress = timer / duration;
+            transform.localScale = Vector3.Lerp(originalScale, targetScale, progress);
+            yield return null;
+        }
+
+        // Уменьшение обратно
+        timer = 0f;
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            float progress = timer / duration;
+            transform.localScale = Vector3.Lerp(targetScale, originalScale, progress);
+            yield return null;
+        }
+
+        transform.localScale = originalScale;
     }
 }
