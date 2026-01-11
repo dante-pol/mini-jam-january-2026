@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -109,7 +110,7 @@ public class Fruit : MonoBehaviour
         currentStage = currentStep + 1;
 
         // Показываем следующий спрайт роста
-        UpdateVisual();
+        StartCoroutine(UpdateVisualAfterDelay());
 
         // Если выполнили все 4 действия - обновляем состояние
         if (actionsTaken.Count == REQUIRED_ACTIONS_COUNT)
@@ -118,21 +119,51 @@ public class Fruit : MonoBehaviour
             CalculateFinalResults();
             OnGrowthComplete?.Invoke(this);
 
-            // Вызываем EndGame из GameManager
-            if (gameManager != null)
-            {
-                Debug.Log($"[FRUIT] Вызов EndGame из GameManager");
-                gameManager.EndGame();
-            }
-            else
-            {
-                Debug.LogWarning($"[FRUIT] GameManager не найден!");
-            }
+            // Запускаем корутину с задержкой
+            StartCoroutine(ShowVictoryScreenAfterFinalAnimation());
         }
 
         Debug.Log($"[FRUIT] Текущая последовательность: [{string.Join(", ", actionsTaken)}]");
 
         return currentStep + 1;
+    }
+
+    private IEnumerator UpdateVisualAfterDelay()
+    {
+        Debug.Log($"[FRUIT] Ожидание завершения анимации действия...");
+
+        // Ждём 3 секунды (пока анимация действия проиграется)
+        yield return new WaitForSeconds(3.4f);
+
+        Debug.Log($"[FRUIT] Обновление визуала растения");
+        UpdateVisual();
+    }
+
+    private IEnumerator ShowVictoryScreenAfterFinalAnimation()
+    {
+        Debug.Log($"[FRUIT] Ожидание анимации действия (3 сек)...");
+
+        // Ждём анимацию действия (лейка, солнце и т.д.)
+        yield return new WaitForSeconds(3f);
+
+        Debug.Log($"[FRUIT] Показ финального спрайта");
+        ShowFinalSprite(); // Показываем финальный спрайт ЗДЕСЬ
+
+        Debug.Log($"[FRUIT] Ожидание анимации роста (0.5 сек)...");
+
+        // Ждём анимацию роста (ScaleAnimation)
+        yield return new WaitForSeconds(0f);
+
+        Debug.Log($"[FRUIT] Показ экрана победы");
+
+        if (gameManager != null)
+        {
+            gameManager.EndGame();
+        }
+        else
+        {
+            Debug.LogWarning($"[FRUIT] GameManager не найден!");
+        }
     }
 
     // Обновить визуал после действия
@@ -144,6 +175,7 @@ public class Fruit : MonoBehaviour
         if (currentStage < growthSprites.Length && growthSprites[currentStage] != null)
         {
             spriteRenderer.sprite = growthSprites[currentStage];
+            StartCoroutine(ScaleAnimation()); // Запускаем анимацию
             Debug.Log($"[FRUIT] Спрайт обновлен: growthSprites[{currentStage}]");
         }
         else
@@ -223,6 +255,7 @@ public class Fruit : MonoBehaviour
         // Проверяем, идеален ли фрукт
         isPerfect = (correctCount == REQUIRED_ACTIONS_COUNT);
 
+        /*
         // Отрисовываем финальный спрайт
         if (spriteRenderer != null)
         {
@@ -243,6 +276,7 @@ public class Fruit : MonoBehaviour
                 }
             }
         }
+        */
 
         Debug.Log($"[FRUIT] РЕЗУЛЬТАТ ДЛЯ ФРУКТА '{fruitName}':");
         Debug.Log($"[FRUIT] Качество: {quality}%");
@@ -252,10 +286,65 @@ public class Fruit : MonoBehaviour
         SaveManager.SaveFruitResult(fruitName, quality, isPerfect);
     }
 
+    private void ShowFinalSprite()
+    {
+        if (spriteRenderer == null) return;
+
+        if (isPerfect && perfectFruitSprite != null)
+        {
+            // Все 4 действия правильные - показываем идеальный фрукт
+            spriteRenderer.sprite = perfectFruitSprite;
+            StartCoroutine(ScaleAnimation());
+            Debug.Log($"[FRUIT] Отрисован идеальный фрукт!");
+        }
+        else if (mutationCount > 0 && mutationCount <= mutationSprites.Length)
+        {
+            // Есть мутации - показываем соответствующий спрайт
+            int mutationIndex = mutationCount - 1;
+            if (mutationSprites[mutationIndex] != null)
+            {
+                spriteRenderer.sprite = mutationSprites[mutationIndex];
+                StartCoroutine(ScaleAnimation());
+                Debug.Log($"[FRUIT] Отрисован фрукт с мутацией: mutationSprites[{mutationIndex}]");
+            }
+        }
+    }
+
     // Публичный метод для сброса фрукта
     public void ResetFruit()
     {
         Debug.Log($"[FRUIT] Сброс фрукта '{fruitName}'");
         Start();
+    }
+
+    // Добавьте в класс Fruit
+    private IEnumerator ScaleAnimation()
+    {
+        Vector3 originalScale = transform.localScale;
+        Vector3 targetScale = originalScale * 1.2f;
+
+        // Увеличение
+        float duration = 0.2f;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            float progress = timer / duration;
+            transform.localScale = Vector3.Lerp(originalScale, targetScale, progress);
+            yield return null;
+        }
+
+        // Уменьшение обратно
+        timer = 0f;
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            float progress = timer / duration;
+            transform.localScale = Vector3.Lerp(targetScale, originalScale, progress);
+            yield return null;
+        }
+
+        transform.localScale = originalScale;
     }
 }

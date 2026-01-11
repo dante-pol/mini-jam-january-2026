@@ -3,6 +3,12 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Цвета результатов")]
+    [SerializeField] private Color correctColor = Color.green;
+    [SerializeField] private Color wrongOrderColor = Color.yellow;
+    [SerializeField] private Color notInComboColor = Color.red;
+
+
     [Header("UI Панели")]
     [SerializeField] private GameObject mainGamePanel;
     [SerializeField] private GameObject victoryPanel;
@@ -23,7 +29,8 @@ public class GameManager : MonoBehaviour
     
     [Header("UI результаты")]
     [SerializeField] private TMPro.TextMeshProUGUI resultText;
-    [SerializeField] private TMPro.TextMeshProUGUI fruitNameText;
+    [SerializeField] private string PerfecText = "Perfect fruit!";
+    [SerializeField] private string MutationText = "Mutation obtained";
     
     private Fruit currentFruit;
     private Sprite[] actionSprites;
@@ -49,7 +56,17 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         if (currentFruit == null) return;
-        
+
+        if (currentFruit.isPerfect)
+        {
+            AudioManager.Instance?.PlayWinSound();
+        }
+
+        else 
+        {
+            AudioManager.Instance?.PlayMutationSound();
+        }
+
         // ★ Итоговый спрайт как было ★
         if (finalFruitImage != null && currentFruit != null)
         {
@@ -60,9 +77,18 @@ public class GameManager : MonoBehaviour
         // ★ НОВОЕ: Показ комбинации действий ★
         ShowPlayerActionCombo();
         
-        // Имя и качество
-        if (fruitNameText != null) fruitNameText.text = currentFruit.fruitName;
-        if (resultText != null) resultText.text = $"{currentFruit.quality}%";
+        // Имя и качество / тип результата
+        if (resultText != null)
+        {
+            if (currentFruit.isPerfect)
+            {
+                resultText.text = PerfecText;          // "Perfect!"
+            }
+            else
+            {
+                resultText.text = MutationText;        // "Mutation obtained"
+            }
+        }
         
         // Переключение панелей
         if (mainGamePanel != null) mainGamePanel.SetActive(false);
@@ -105,18 +131,18 @@ public class GameManager : MonoBehaviour
         int index = (int)action;
         return index < actionSprites.Length ? actionSprites[index] : null;
     }
-    
+
     Color GetActionColor(ActionResult result)
     {
         return result switch
         {
-            ActionResult.Correct => Color.green,      // ✅ Правильно
-            ActionResult.WrongOrder => Color.yellow,  // ⚠️ Есть, но не там
-            ActionResult.NotInCombo => Color.red,     // ❌ Нет в комбинации
+            ActionResult.Correct => correctColor,
+            ActionResult.WrongOrder => wrongOrderColor,
+            ActionResult.NotInCombo => notInComboColor,
             _ => Color.white
         };
     }
-    
+
     public void MainMenu()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
