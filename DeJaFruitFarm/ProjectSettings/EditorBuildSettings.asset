@@ -23,6 +23,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Root/Content/Scenes/Alexzander3.unity
     guid: 55fbacc729ab20041b022b9e600c5ebf
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/Alexzander.unity
+    guid: f9b43c5e5f7104eb2b07225a5adcfe1f
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/DragonPage.unity
+    guid: 47e5754552bec42c281fc791c3112a75
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/secondFruitPage.unity
+    guid: cb6b8a4019d66224c80984dec1e28d7d
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/thirdFruitPage.unity
+    guid: 0d6d4e936ed983b43b0b4dc2584961cb
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

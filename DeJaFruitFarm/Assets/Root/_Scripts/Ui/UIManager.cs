@@ -37,6 +37,20 @@ public class UiManager: MonoBehaviour
         SceneManager.LoadScene("Alexzander3");
     }
 
+    public void LoadDragonInfo()
+    {
+        SceneManager.LoadScene("DragonPage");
+    }
+
+    public void LoadAkebiaInfo()
+    {
+        SceneManager.LoadScene("secondFruitPage");
+    }
+
+    public void LoadPomegranateInfo()
+    {
+        SceneManager.LoadScene("thirdFruitPage");
+    }
 
     public void LoadGardenToSasha()
     {

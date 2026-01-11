@@ -1106,22 +1106,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00cfc47eb0535ac4c971536f6684e1da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fruitCode: dragonfruit
+  fruitCode: secondFruit
   perfectImage: {fileID: 840321258}
   mutation75Image: {fileID: 1255133696}
   mutation50Image: {fileID: 1439197875}
   mutation25Image: {fileID: 1168619121}
   mutation0Image: {fileID: 115485165}
-  perfectSilhouette: {fileID: -3184152336506181629, guid: 18b6bd20881a34e15a17e9ccc684fb1e, type: 3}
-  mutation75Silhouette: {fileID: 5605498177460169956, guid: 8d4168e592b6f6b40983f1a6fbf96bba, type: 3}
-  mutation50Silhouette: {fileID: 2676924817761890302, guid: 8d4168e592b6f6b40983f1a6fbf96bba, type: 3}
-  mutation25Silhouette: {fileID: 2893097020632493391, guid: 8d4168e592b6f6b40983f1a6fbf96bba, type: 3}
-  mutation0Silhouette: {fileID: 5981062203613406126, guid: 8d4168e592b6f6b40983f1a6fbf96bba, type: 3}
-  perfectUnlocked: {fileID: 6298055801854777206, guid: 214c6e53ba2e23443a2e532ca5dd9eb6, type: 3}
-  mutation75Unlocked: {fileID: -2468051615502603513, guid: 0ce5dbe86978360409a9485a153e4ec1, type: 3}
-  mutation50Unlocked: {fileID: -4732328883756537350, guid: 0c329056363b35946984faa24c05f175, type: 3}
-  mutation25Unlocked: {fileID: 5711224967407102493, guid: fd9909c50963bb04eb84882728afdf67, type: 3}
-  mutation0Unlocked: {fileID: 7645152222164772839, guid: 550e62e849fcd414da6746f3b85ddfc7, type: 3}
+  perfectSilhouette: {fileID: -4531263247018178912, guid: e9f07f3182ec39d408bd900d94c18c11, type: 3}
+  mutation75Silhouette: {fileID: 2469325567653325049, guid: c7a92a035a158b44b9fb6e0d4336fc32, type: 3}
+  mutation50Silhouette: {fileID: 323666293133632099, guid: c7a92a035a158b44b9fb6e0d4336fc32, type: 3}
+  mutation25Silhouette: {fileID: 2549712794482162591, guid: c7a92a035a158b44b9fb6e0d4336fc32, type: 3}
+  mutation0Silhouette: {fileID: -75468209691025791, guid: c7a92a035a158b44b9fb6e0d4336fc32, type: 3}
+  perfectUnlocked: {fileID: -5154453142351496543, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  mutation75Unlocked: {fileID: 6409047780355242978, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  mutation50Unlocked: {fileID: -1730339781492221390, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  mutation25Unlocked: {fileID: -5995150102107979733, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  mutation0Unlocked: {fileID: 5294943729534304033, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
 --- !u!4 &1223331910
 Transform:
   m_ObjectHideFlags: 0
@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pitaya
+  m_text: Akebia
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 440d6f2f71f024f5cbcbd057aaa14608, type: 2}
   m_sharedMaterial: {fileID: 2759094242373427774, guid: 440d6f2f71f024f5cbcbd057aaa14608, type: 2}
