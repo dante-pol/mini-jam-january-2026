@@ -421,18 +421,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184963787b357ac45923433c50e7b7a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuBackgroundMusic: {fileID: 8300000, guid: 8c0186bf275665848a42771df5da0599, type: 3}
-  _gameBackgroundMusic: {fileID: 8300000, guid: 8c0186bf275665848a42771df5da0599, type: 3}
+  _menuBackgroundMusic: {fileID: 8300000, guid: 2f903c3c52b4baf4c9943b90044e2e8e, type: 3}
+  _gameBackgroundMusic: {fileID: 8300000, guid: 287e85996ea02474795d4b4afeefa4a0, type: 3}
   _buttonClickSound: {fileID: 8300000, guid: 9674be7e23b565f428a4091bff083fa3, type: 3}
-  _buttonHoverSound: {fileID: 8300000, guid: 9674be7e23b565f428a4091bff083fa3, type: 3}
+  _buttonHoverSound: {fileID: 8300000, guid: 596c969756123704d97602081e26d490, type: 3}
   _actionSounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _musicVolume: 0.3
+  - {fileID: 8300000, guid: 5d5090801c7edf747868ddc4ceded0a3, type: 3}
+  - {fileID: 8300000, guid: d544cc4fb25451246a80cc30ba0407e2, type: 3}
+  - {fileID: 8300000, guid: ba4ef5ec994ac604aab2b0a490fb55f0, type: 3}
+  - {fileID: 8300000, guid: 601ae929ef02be54f92fe365e04a2dae, type: 3}
+  - {fileID: 8300000, guid: aa7168f2bb948354eb3cd615b7d8f514, type: 3}
+  - {fileID: 8300000, guid: 6c9a9d198c09e7f41a47d03018ff0fe1, type: 3}
+  _musicVolume: 0.53
   _sfxVolume: 0.7
   _uiVolume: 0.5
 --- !u!4 &136184087
@@ -551,9 +551,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1500027724}
-        m_TargetAssemblyTypeName: ActionAnimator, Assembly-CSharp
-        m_MethodName: PlayWaitingAnimation
+      - m_Target: {fileID: 136184086}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -915,6 +915,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb327d74f8b0641dfaad94be4957ac1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correctColor: {r: 0, g: 1, b: 0, a: 1}
+  wrongOrderColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  notInComboColor: {r: 1, g: 0, b: 0, a: 1}
+  actionAnimator: {fileID: 1500027724}
+  delayBeforeVictory: 0.5
   mainGamePanel: {fileID: 1276940157}
   victoryPanel: {fileID: 1629990798}
   finalFruitImage: {fileID: 388686098}
@@ -930,7 +935,8 @@ MonoBehaviour:
   - {fileID: 2139176774}
   - {fileID: 1838743772}
   resultText: {fileID: 0}
-  fruitNameText: {fileID: 0}
+  PerfecText: Perfect fruit!
+  MutationText: Mutation obtained
 --- !u!114 &353404338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1006,7 +1012,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1500027725}
+  - {fileID: 1078442323}
   - {fileID: 1276940160}
+  - {fileID: 901501375}
   - {fileID: 1629990799}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1526,7 +1535,7 @@ Transform:
   m_GameObject: {fileID: 593467581}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.08, y: -1.12, z: -0.020562066}
+  m_LocalPosition: {x: -1.08, y: 0.92, z: -0.020562066}
   m_LocalScale: {x: 0.39070576, y: 0.36493766, z: 0.22024}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2003,6 +2012,158 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797119408}
   m_CullTransparentMesh: 1
+--- !u!1 &901501374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 901501375}
+  - component: {fileID: 901501378}
+  - component: {fileID: 901501377}
+  - component: {fileID: 901501376}
+  m_Layer: 5
+  m_Name: ActionCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &901501375
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901501374}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.00008, y: 1.00008, z: 1.00008}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 353404341}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 845, y: -482}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.50000006}
+--- !u!114 &901501376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901501374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7035e25e5746f0d4683a66e432fd86e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterText: {fileID: 0}
+  fruit: {fileID: 0}
+  textFormat: '{0}/4'
+--- !u!114 &901501377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901501374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 440d6f2f71f024f5cbcbd057aaa14608, type: 2}
+  m_sharedMaterial: {fileID: 2759094242373427774, guid: 440d6f2f71f024f5cbcbd057aaa14608, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 52
+  m_fontSizeBase: 52
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &901501378
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901501374}
+  m_CullTransparentMesh: 1
 --- !u!1 &910607473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,9 +2265,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1500027724}
-        m_TargetAssemblyTypeName: ActionAnimator, Assembly-CSharp
-        m_MethodName: PlayUVLampAnimation
+      - m_Target: {fileID: 136184086}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2255,9 +2416,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1500027724}
-        m_TargetAssemblyTypeName: ActionAnimator, Assembly-CSharp
-        m_MethodName: PlayWateringAnimation
+      - m_Target: {fileID: 136184086}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2305,6 +2466,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063255627}
   m_CullTransparentMesh: 1
+--- !u!1 &1078442321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1078442323}
+  - component: {fileID: 1078442322}
+  m_Layer: 0
+  m_Name: ButtonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1078442322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078442321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ec8aa41e1c54340accf050b61cc0f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wateringButton: {fileID: 1063255630}
+  _sunlightButton: {fileID: 1095785843}
+  _uvLampButton: {fileID: 910607476}
+  _pruningButton: {fileID: 1990000526}
+  _fertilizingButton: {fileID: 1443694012}
+  _waitingButton: {fileID: 242152230}
+  _actionAnimator: {fileID: 1500027724}
+--- !u!4 &1078442323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078442321}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -149.82457, y: 82.67032, z: -9784.036}
+  m_LocalScale: {x: 108, y: 108, z: 108}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 353404341}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1095785840
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,9 +2618,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1500027724}
-        m_TargetAssemblyTypeName: ActionAnimator, Assembly-CSharp
-        m_MethodName: PlaySunlightAnimation
+      - m_Target: {fileID: 136184086}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3182,9 +3394,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1500027724}
-        m_TargetAssemblyTypeName: ActionAnimator, Assembly-CSharp
-        m_MethodName: PlayFertilizingAnimation
+      - m_Target: {fileID: 136184086}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3268,23 +3480,23 @@ MonoBehaviour:
   _sunlightAnimation:
     animatedObject: {fileID: 733162178}
     animator: {fileID: 733162180}
-    duration: 4
+    duration: 3
   _uvLampAnimation:
     animatedObject: {fileID: 1953943169}
     animator: {fileID: 1953943171}
-    duration: 4
+    duration: 3
   _pruningAnimation:
     animatedObject: {fileID: 1991589046}
     animator: {fileID: 1991589048}
-    duration: 4
+    duration: 3
   _fertilizingAnimation:
     animatedObject: {fileID: 379673117}
     animator: {fileID: 379673119}
-    duration: 4
+    duration: 3
   _waitingAnimation:
     animatedObject: {fileID: 593467581}
     animator: {fileID: 593467582}
-    duration: 4
+    duration: 3
 --- !u!4 &1500027725
 Transform:
   m_ObjectHideFlags: 0
@@ -3293,12 +3505,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500027723}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.09758, y: 1.1100731, z: -0.61943537}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 118.538635, y: 119.88789, z: -9786.899}
+  m_LocalScale: {x: 108, y: 108, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 353404341}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1563972270
 GameObject:
@@ -3587,7 +3799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1953943170
 Transform:
   m_ObjectHideFlags: 0
@@ -3917,9 +4129,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1500027724}
-        m_TargetAssemblyTypeName: ActionAnimator, Assembly-CSharp
-        m_MethodName: PlayPruningAnimation
+      - m_Target: {fileID: 136184086}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4568,4 +4780,3 @@ SceneRoots:
   - {fileID: 123556813}
   - {fileID: 353404341}
   - {fileID: 765363784}
-  - {fileID: 1500027725}
