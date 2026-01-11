@@ -5,9 +5,45 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+  - enabled: 0
+    path: Assets/Root/Content/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/MainMenu.unity
+    guid: b4cd8a117acfc49528608723b9d3e94a
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/NiceIlya.unity
+    guid: 748ad1f7823974941acb7b013993fa8a
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/Collection.unity
+    guid: 03e8f062cfdba4074bc0368c50fe93e7
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/Alexzander2.unity
+    guid: f44202a6e54c7b4439c2648862880653
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/Alexzander3.unity
+    guid: 55fbacc729ab20041b022b9e600c5ebf
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/Alexzander.unity
+    guid: f9b43c5e5f7104eb2b07225a5adcfe1f
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/NewPomegranate.unity
+    guid: ae59a1c6ee4c04ded8f113b25f34da6c
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/NewDragon.unity
+    guid: a4712c4ca330843f795b1d4721bc1570
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/DragonPage.unity
+    guid: 47e5754552bec42c281fc791c3112a75
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/NewAkebia.unity
+    guid: 9fab1e63fb39c41eb9d54fdaf6ea5ded
+  - enabled: 0
+    path: Assets/Root/Content/Scenes/secondFruitPage.unity
+    guid: cb6b8a4019d66224c80984dec1e28d7d
+  - enabled: 0
+    path: Assets/Root/Content/Scenes/thirdFruitPage.unity
+    guid: 0d6d4e936ed983b43b0b4dc2584961cb
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
