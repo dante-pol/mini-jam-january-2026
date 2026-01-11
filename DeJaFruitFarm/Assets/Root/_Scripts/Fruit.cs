@@ -110,7 +110,7 @@ public class Fruit : MonoBehaviour
         currentStage = currentStep + 1;
 
         // Показываем следующий спрайт роста
-        UpdateVisual();
+        StartCoroutine(UpdateVisualAfterDelay());
 
         // Если выполнили все 4 действия - обновляем состояние
         if (actionsTaken.Count == REQUIRED_ACTIONS_COUNT)
@@ -120,7 +120,7 @@ public class Fruit : MonoBehaviour
             OnGrowthComplete?.Invoke(this);
 
             // Запускаем корутину с задержкой
-            StartCoroutine(ShowVictoryScreenAfterDelay());
+            StartCoroutine(ShowVictoryScreenAfterFinalAnimation());
         }
 
         Debug.Log($"[FRUIT] Текущая последовательность: [{string.Join(", ", actionsTaken)}]");
@@ -128,12 +128,31 @@ public class Fruit : MonoBehaviour
         return currentStep + 1;
     }
 
-    private IEnumerator ShowVictoryScreenAfterDelay()
+    private IEnumerator UpdateVisualAfterDelay()
     {
-        Debug.Log($"[FRUIT] Ожидание 3 секунды перед экраном победы...");
+        Debug.Log($"[FRUIT] Ожидание завершения анимации действия...");
 
-        // Ждём 3 секунды (или измените на нужное значение)
+        // Ждём 3 секунды (пока анимация действия проиграется)
+        yield return new WaitForSeconds(3.4f);
+
+        Debug.Log($"[FRUIT] Обновление визуала растения");
+        UpdateVisual();
+    }
+
+    private IEnumerator ShowVictoryScreenAfterFinalAnimation()
+    {
+        Debug.Log($"[FRUIT] Ожидание анимации действия (3 сек)...");
+
+        // Ждём анимацию действия (лейка, солнце и т.д.)
         yield return new WaitForSeconds(3f);
+
+        Debug.Log($"[FRUIT] Показ финального спрайта");
+        ShowFinalSprite(); // Показываем финальный спрайт ЗДЕСЬ
+
+        Debug.Log($"[FRUIT] Ожидание анимации роста (0.5 сек)...");
+
+        // Ждём анимацию роста (ScaleAnimation)
+        yield return new WaitForSeconds(0f);
 
         Debug.Log($"[FRUIT] Показ экрана победы");
 
@@ -236,6 +255,7 @@ public class Fruit : MonoBehaviour
         // Проверяем, идеален ли фрукт
         isPerfect = (correctCount == REQUIRED_ACTIONS_COUNT);
 
+        /*
         // Отрисовываем финальный спрайт
         if (spriteRenderer != null)
         {
@@ -256,6 +276,7 @@ public class Fruit : MonoBehaviour
                 }
             }
         }
+        */
 
         Debug.Log($"[FRUIT] РЕЗУЛЬТАТ ДЛЯ ФРУКТА '{fruitName}':");
         Debug.Log($"[FRUIT] Качество: {quality}%");
@@ -263,6 +284,30 @@ public class Fruit : MonoBehaviour
         Debug.Log($"[FRUIT] Идеальный: {isPerfect}");
 
         SaveManager.SaveFruitResult(fruitName, quality, isPerfect);
+    }
+
+    private void ShowFinalSprite()
+    {
+        if (spriteRenderer == null) return;
+
+        if (isPerfect && perfectFruitSprite != null)
+        {
+            // Все 4 действия правильные - показываем идеальный фрукт
+            spriteRenderer.sprite = perfectFruitSprite;
+            StartCoroutine(ScaleAnimation());
+            Debug.Log($"[FRUIT] Отрисован идеальный фрукт!");
+        }
+        else if (mutationCount > 0 && mutationCount <= mutationSprites.Length)
+        {
+            // Есть мутации - показываем соответствующий спрайт
+            int mutationIndex = mutationCount - 1;
+            if (mutationSprites[mutationIndex] != null)
+            {
+                spriteRenderer.sprite = mutationSprites[mutationIndex];
+                StartCoroutine(ScaleAnimation());
+                Debug.Log($"[FRUIT] Отрисован фрукт с мутацией: mutationSprites[{mutationIndex}]");
+            }
+        }
     }
 
     // Публичный метод для сброса фрукта

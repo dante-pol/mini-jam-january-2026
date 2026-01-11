@@ -18,6 +18,8 @@ public class UiManager: MonoBehaviour
     
     public void LoadGarden()
     {
+        AudioManager.Instance?.StopMusic();
+        AudioManager.Instance?.PlayGameMusic();
         SceneManager.LoadScene("NiceIlya");
     }
 
@@ -34,6 +36,8 @@ public class UiManager: MonoBehaviour
 
     public void LoadMainMenu()
     {
+        AudioManager.Instance?.StopMusic();
+        AudioManager.Instance?.PlayMenuMusic();
         SceneManager.LoadScene("MainMenu");
     }
 }

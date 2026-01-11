@@ -423,6 +423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuBackgroundMusic: {fileID: 8300000, guid: 2f903c3c52b4baf4c9943b90044e2e8e, type: 3}
   _gameBackgroundMusic: {fileID: 8300000, guid: 287e85996ea02474795d4b4afeefa4a0, type: 3}
+  _winSound: {fileID: 8300000, guid: 192d0af68e6edb242bcaaddb5ffc665a, type: 3}
+  _mutationSound: {fileID: 8300000, guid: 9fdbeb7272aebe341a1d9e706c82faa5, type: 3}
   _buttonClickSound: {fileID: 8300000, guid: 9674be7e23b565f428a4091bff083fa3, type: 3}
   _buttonHoverSound: {fileID: 8300000, guid: 596c969756123704d97602081e26d490, type: 3}
   _actionSounds:
@@ -918,8 +920,6 @@ MonoBehaviour:
   correctColor: {r: 0, g: 1, b: 0, a: 1}
   wrongOrderColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   notInComboColor: {r: 1, g: 0, b: 0, a: 1}
-  actionAnimator: {fileID: 1500027724}
-  delayBeforeVictory: 0.5
   mainGamePanel: {fileID: 1276940157}
   victoryPanel: {fileID: 1629990798}
   finalFruitImage: {fileID: 388686098}

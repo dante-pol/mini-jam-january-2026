@@ -56,7 +56,17 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         if (currentFruit == null) return;
-        
+
+        if (currentFruit.isPerfect)
+        {
+            AudioManager.Instance?.PlayWinSound();
+        }
+
+        else 
+        {
+            AudioManager.Instance?.PlayMutationSound();
+        }
+
         // ★ Итоговый спрайт как было ★
         if (finalFruitImage != null && currentFruit != null)
         {
