@@ -2136,16 +2136,16 @@ MonoBehaviour:
   fruitName: secondFruit
   idealCombo: 05000000000000000100000003000000
   growthSprites:
-  - {fileID: 7640981238015577660, guid: fbb9acf06b38d86498de46cc52b6cc06, type: 3}
-  - {fileID: -1702363791684612814, guid: 1c284f2e22d672e43b056523f44a0573, type: 3}
-  - {fileID: 6559047180953006338, guid: 54894fa98905bc2449138f2c675cd626, type: 3}
-  - {fileID: 2106699915667202512, guid: dc3e9bf42e7e3c7448d55007ba190256, type: 3}
+  - {fileID: 179017101160589001, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  - {fileID: 237328592265494039, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  - {fileID: 664662057906940375, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  - {fileID: 164109941551703419, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
   mutationSprites:
-  - {fileID: -2468051615502603513, guid: 0ce5dbe86978360409a9485a153e4ec1, type: 3}
-  - {fileID: -4732328883756537350, guid: 0c329056363b35946984faa24c05f175, type: 3}
-  - {fileID: 5711224967407102493, guid: fd9909c50963bb04eb84882728afdf67, type: 3}
-  - {fileID: 7645152222164772839, guid: 550e62e849fcd414da6746f3b85ddfc7, type: 3}
-  perfectFruitSprite: {fileID: 6298055801854777206, guid: 214c6e53ba2e23443a2e532ca5dd9eb6, type: 3}
+  - {fileID: 6409047780355242978, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  - {fileID: -1730339781492221390, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  - {fileID: -5995150102107979733, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  - {fileID: 5294943729534304033, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  perfectFruitSprite: {fileID: -5154453142351496543, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
   spriteRenderer: {fileID: 0}
   gameManager: {fileID: 0}
   actionsTaken: 

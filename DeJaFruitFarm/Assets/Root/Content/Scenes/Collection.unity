@@ -643,8 +643,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruitCode: thirdFruit
-  silhouetteSprite: {fileID: -3184152336506181629, guid: 18b6bd20881a34e15a17e9ccc684fb1e, type: 3}
-  perfectSprite: {fileID: 6298055801854777206, guid: 214c6e53ba2e23443a2e532ca5dd9eb6, type: 3}
+  silhouetteSprite: {fileID: 5800732108068961472, guid: 504a7c975fb9bbd41ae417ddba0947c4, type: 3}
+  perfectSprite: {fileID: -6457142665551811587, guid: 7c2bdc231d8c1714d8f2c9c2bce89f0e, type: 3}
 --- !u!212 &284802210
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -689,7 +689,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3184152336506181629, guid: 18b6bd20881a34e15a17e9ccc684fb1e, type: 3}
+  m_Sprite: {fileID: 5800732108068961472, guid: 504a7c975fb9bbd41ae417ddba0947c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1223,7 +1223,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3184152336506181629, guid: 18b6bd20881a34e15a17e9ccc684fb1e, type: 3}
+  m_Sprite: {fileID: -4531263247018178912, guid: e9f07f3182ec39d408bd900d94c18c11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1262,8 +1262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruitCode: secondFruit
-  silhouetteSprite: {fileID: -3184152336506181629, guid: 18b6bd20881a34e15a17e9ccc684fb1e, type: 3}
-  perfectSprite: {fileID: 6298055801854777206, guid: 214c6e53ba2e23443a2e532ca5dd9eb6, type: 3}
+  silhouetteSprite: {fileID: -4531263247018178912, guid: e9f07f3182ec39d408bd900d94c18c11, type: 3}
+  perfectSprite: {fileID: -5154453142351496543, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
 --- !u!1 &1595611691
 GameObject:
   m_ObjectHideFlags: 0
