@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Root/Content/Scenes/MainMenu.unity
     guid: b4cd8a117acfc49528608723b9d3e94a
   - enabled: 1
-    path: Assets/Root/Content/Scenes/NiceIlya.unity
-    guid: 748ad1f7823974941acb7b013993fa8a
-  - enabled: 1
     path: Assets/Root/Content/Scenes/Collection.unity
     guid: 03e8f062cfdba4074bc0368c50fe93e7
   - enabled: 1
@@ -23,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Root/Content/Scenes/Alexzander3.unity
     guid: 55fbacc729ab20041b022b9e600c5ebf
+  - enabled: 1
+    path: Assets/Root/Content/Scenes/Alexzander.unity
+    guid: f9b43c5e5f7104eb2b07225a5adcfe1f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
