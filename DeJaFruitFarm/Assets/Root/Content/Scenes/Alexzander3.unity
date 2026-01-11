@@ -2133,19 +2133,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bc993aac9dff44ca4e8b45ee5fbd18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fruitName: secondFruit
-  idealCombo: 05000000000000000100000003000000
+  fruitName: thirdFruit
+  idealCombo: 02000000000000000100000004000000
   growthSprites:
-  - {fileID: 179017101160589001, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
-  - {fileID: 237328592265494039, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
-  - {fileID: 664662057906940375, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
-  - {fileID: 164109941551703419, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  - {fileID: -8429927186702210374, guid: 7c2bdc231d8c1714d8f2c9c2bce89f0e, type: 3}
+  - {fileID: -7446703781038962872, guid: 7c2bdc231d8c1714d8f2c9c2bce89f0e, type: 3}
+  - {fileID: 2600773496382775295, guid: 7c2bdc231d8c1714d8f2c9c2bce89f0e, type: 3}
+  - {fileID: 3370342912614183085, guid: 7c2bdc231d8c1714d8f2c9c2bce89f0e, type: 3}
   mutationSprites:
-  - {fileID: 6409047780355242978, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
-  - {fileID: -1730339781492221390, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
-  - {fileID: -5995150102107979733, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
-  - {fileID: 5294943729534304033, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
-  perfectFruitSprite: {fileID: -5154453142351496543, guid: 07e066f6f8782f344a470ac1ef1d2cd6, type: 3}
+  - {fileID: 4125351338915394142, guid: 7c2bdc231d8c1714d8f2c9c2bce89f0e, type: 3}
+  - {fileID: 2071844431390509380, guid: 7c2bdc231d8c1714d8f2c9c2bce89f0e, type: 3}
+  - {fileID: 7184204817007793455, guid: 7c2bdc231d8c1714d8f2c9c2bce89f0e, type: 3}
+  - {fileID: -7056481462411532085, guid: 7c2bdc231d8c1714d8f2c9c2bce89f0e, type: 3}
+  perfectFruitSprite: {fileID: -6457142665551811587, guid: 7c2bdc231d8c1714d8f2c9c2bce89f0e, type: 3}
   spriteRenderer: {fileID: 0}
   gameManager: {fileID: 0}
   actionsTaken: 
@@ -4114,7 +4114,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1494176754}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: LoadGardenSecondFruit
+        m_MethodName: LoadGardenThirdFruit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
