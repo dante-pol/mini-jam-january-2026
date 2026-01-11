@@ -711,7 +711,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 172578336}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: LoadGarden
+        m_MethodName: LoadPomegranateInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1915,7 +1915,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1039489827}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: LoadGarden
+        m_MethodName: LoadAkebiaInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2980,7 +2980,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1935717119}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: LoadGarden
+        m_MethodName: LoadDragonInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
