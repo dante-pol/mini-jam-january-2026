@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -10,6 +9,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip _gameBackgroundMusic;
 
     [Header("UI Sounds")]
+    [SerializeField] private AudioClip _winSound;
+    [SerializeField] private AudioClip _mutationSound;
     [SerializeField] private AudioClip _buttonClickSound;
     [SerializeField] private AudioClip _buttonHoverSound;
 
@@ -101,6 +102,16 @@ public class AudioManager : MonoBehaviour
     public void PlayButtonHover()
     {
         PlayUISound(_buttonHoverSound);
+    }
+
+    public void PlayWinSound()
+    {
+        PlayUISound(_winSound);
+    }
+
+    public void PlayMutationSound()
+    {
+        PlayUISound(_mutationSound);
     }
 
     private void PlayUISound(AudioClip clip)
