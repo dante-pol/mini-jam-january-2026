@@ -1572,9 +1572,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 601ae929ef02be54f92fe365e04a2dae, type: 3}
   - {fileID: 8300000, guid: 218ca3aa9a31d5248b912e891e6b3421, type: 3}
   - {fileID: 8300000, guid: 6c9a9d198c09e7f41a47d03018ff0fe1, type: 3}
-  _musicVolume: 0.53
+  _musicVolume: 0.7
   _sfxVolume: 0.7
-  _uiVolume: 0.5
+  _uiVolume: 0.4
 --- !u!4 &1896641482
 Transform:
   m_ObjectHideFlags: 0
