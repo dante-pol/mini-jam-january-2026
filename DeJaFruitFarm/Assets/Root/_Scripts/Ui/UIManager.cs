@@ -4,7 +4,15 @@ using UnityEngine.UI;
 
 public class UiManager: MonoBehaviour
 {
-    
+    void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            AudioManager.Instance?.PlayMenuMusic();
+        }
+    }
+
+
     public void LoadCollection()
     {
         SceneManager.LoadScene("Collection");

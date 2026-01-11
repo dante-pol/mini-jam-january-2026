@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 200461998}
   - component: {fileID: 200461997}
   - component: {fileID: 200462000}
+  - component: {fileID: 200462001}
   m_Layer: 5
   m_Name: CollectionButton
   m_TagString: Untagged
@@ -263,6 +264,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a28f5af5b2c8b4c9aacbe36b5ca09279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &200462001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200461995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4a0d31ce33bce4dac895bbcc2a0a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &252769948
@@ -495,6 +508,7 @@ GameObject:
   - component: {fileID: 493514670}
   - component: {fileID: 493514669}
   - component: {fileID: 493514672}
+  - component: {fileID: 493514673}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -626,6 +640,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a28f5af5b2c8b4c9aacbe36b5ca09279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &493514673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493514667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4a0d31ce33bce4dac895bbcc2a0a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &537996395
@@ -1504,6 +1530,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557066881}
   m_CullTransparentMesh: 1
+--- !u!1 &1896641480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1896641482}
+  - component: {fileID: 1896641481}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1896641481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896641480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 184963787b357ac45923433c50e7b7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _menuBackgroundMusic: {fileID: 8300000, guid: 2f903c3c52b4baf4c9943b90044e2e8e, type: 3}
+  _gameBackgroundMusic: {fileID: 8300000, guid: 287e85996ea02474795d4b4afeefa4a0, type: 3}
+  _winSound: {fileID: 8300000, guid: 192d0af68e6edb242bcaaddb5ffc665a, type: 3}
+  _mutationSound: {fileID: 8300000, guid: 9fdbeb7272aebe341a1d9e706c82faa5, type: 3}
+  _buttonClickSound: {fileID: 8300000, guid: 9674be7e23b565f428a4091bff083fa3, type: 3}
+  _buttonHoverSound: {fileID: 8300000, guid: 596c969756123704d97602081e26d490, type: 3}
+  _actionSounds:
+  - {fileID: 8300000, guid: 5d5090801c7edf747868ddc4ceded0a3, type: 3}
+  - {fileID: 8300000, guid: d544cc4fb25451246a80cc30ba0407e2, type: 3}
+  - {fileID: 8300000, guid: ba4ef5ec994ac604aab2b0a490fb55f0, type: 3}
+  - {fileID: 8300000, guid: 601ae929ef02be54f92fe365e04a2dae, type: 3}
+  - {fileID: 8300000, guid: 218ca3aa9a31d5248b912e891e6b3421, type: 3}
+  - {fileID: 8300000, guid: 6c9a9d198c09e7f41a47d03018ff0fe1, type: 3}
+  _musicVolume: 0.53
+  _sfxVolume: 0.7
+  _uiVolume: 0.5
+--- !u!4 &1896641482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896641480}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1511,3 +1597,4 @@ SceneRoots:
   - {fileID: 252769951}
   - {fileID: 1166582050}
   - {fileID: 889328183}
+  - {fileID: 1896641482}
