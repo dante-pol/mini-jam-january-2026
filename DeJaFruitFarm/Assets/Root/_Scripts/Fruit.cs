@@ -119,21 +119,32 @@ public class Fruit : MonoBehaviour
             CalculateFinalResults();
             OnGrowthComplete?.Invoke(this);
 
-            // Вызываем EndGame из GameManager
-            if (gameManager != null)
-            {
-                Debug.Log($"[FRUIT] Вызов EndGame из GameManager");
-                gameManager.EndGame();
-            }
-            else
-            {
-                Debug.LogWarning($"[FRUIT] GameManager не найден!");
-            }
+            // Запускаем корутину с задержкой
+            StartCoroutine(ShowVictoryScreenAfterDelay());
         }
 
         Debug.Log($"[FRUIT] Текущая последовательность: [{string.Join(", ", actionsTaken)}]");
 
         return currentStep + 1;
+    }
+
+    private IEnumerator ShowVictoryScreenAfterDelay()
+    {
+        Debug.Log($"[FRUIT] Ожидание 3 секунды перед экраном победы...");
+
+        // Ждём 3 секунды (или измените на нужное значение)
+        yield return new WaitForSeconds(3f);
+
+        Debug.Log($"[FRUIT] Показ экрана победы");
+
+        if (gameManager != null)
+        {
+            gameManager.EndGame();
+        }
+        else
+        {
+            Debug.LogWarning($"[FRUIT] GameManager не найден!");
+        }
     }
 
     // Обновить визуал после действия
